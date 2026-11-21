@@ -15,10 +15,30 @@ const robotFilter = ref(String(route.query.robot ?? 'all'))
 const initialType = String(route.query.type ?? '')
 const typeFilter = ref<'all' | 'program' | 'config' | 'log'>(initialType === 'program' || initialType === 'config' || initialType === 'log' ? initialType : 'all')
 const statusFilter = ref<'all' | 'logic' | 'position' | 'comment' | 'config'>('all')
+const weldOnly = ref(route.query.weld === '1')
 
-watch(typeFilter, (v) => {
-  router.replace({ query: { ...route.query, type: v === 'program' ? undefined : v } })
+watch([typeFilter, weldOnly], ([type, weld]) => {
+  router.replace({
+    query: {
+      ...route.query,
+      type: type === 'program' ? undefined : type,
+      weld: weld ? '1' : undefined,
+    },
+  })
 })
+
+/** STYLE 主程序与真正的焊接轨迹（ED* / G3G5*_WELD、WELD_ON 等）。 */
+function isWeldProgram(c: ChangeEntry) {
+  if (c.kind !== 'program')
+    return false
+  const id = (c.programId ?? c.name.replace(/\.tp$/i, '')).toLowerCase()
+  if (!id || /^(style201|style211|style221)$/.test(id))
+    return false
+  return /^style\d+$/.test(id)
+    || /(^|_)weld($|_)/.test(id)
+    || /^g3g5_.*weld/.test(id)
+    || /^(weld_on|spot_count_bg|pance\d*)$/.test(id)
+}
 
 onMounted(async () => {
   try {
@@ -47,11 +67,18 @@ function typeOf(c: ChangeEntry) {
   return 'config'
 }
 
+const scoped = computed(() => {
+  let list = data.value?.changes ?? []
+  if (robotFilter.value !== 'all')
+    list = list.filter(c => c.robot === robotFilter.value)
+  if (weldOnly.value)
+    list = list.filter(isWeldProgram)
+  return list
+})
+
 const filtered = computed(() => {
   const q = query.value.trim().toLowerCase()
-  return (data.value?.changes ?? []).filter((c) => {
-    if (robotFilter.value !== 'all' && c.robot !== robotFilter.value)
-      return false
+  return scoped.value.filter((c) => {
     if (typeFilter.value !== 'all' && typeOf(c) !== typeFilter.value)
       return false
     if (statusFilter.value === 'logic' && c.status !== 'code')
@@ -76,12 +103,12 @@ const groups = computed(() => {
   return [...map.entries()].map(([robot, items]) => ({
     robot,
     items,
-    summary: data.value?.changes.filter(c => c.robot === robot).length ?? 0,
+    summary: scoped.value.filter(c => c.robot === robot).length,
   })).sort((a, b) => Number(a.robot.slice(1)) - Number(b.robot.slice(1)))
 })
 
 const counts = computed(() => {
-  const all = data.value?.changes ?? []
+  const all = scoped.value
   return {
     total: all.length,
     logic: all.filter(c => c.status === 'code').length,
@@ -115,10 +142,11 @@ function open(c: ChangeEntry) {
           按文件内容哈希比较两次备份。程序文件先转成 <code>.ls</code> 再做语义分类；
           配置与日志文件按 GB18030 解码后逐行比较。二进制配置的“变更”只代表内容不同，具体字段需要回控制器确认。
         </p>
-        <p class="text-xs not-prose op-45">
-          当前区间共 <strong>{{ counts.total }}</strong> 项：程序 {{ counts.program }} · 配置 / 日志 {{ counts.config }}。
-          <button v-if="typeFilter !== 'all'" class="underline hover:op-80" @click="typeFilter = 'all'">查看全部 {{ counts.total }} 项</button>
-          <button v-else-if="counts.program" class="underline hover:op-80" @click="typeFilter = 'program'">只看 {{ counts.program }} 个程序变更</button>
+        <p class="text-xs op-45">
+          当前筛选共 <strong>{{ counts.total }}</strong> 项：{{ weldOnly ? '焊接程序' : '程序' }} {{ counts.program }} · 配置 / 日志 {{ counts.config }}。
+          <button v-if="!weldOnly && typeFilter !== 'all'" class="underline hover:op-80" @click="typeFilter = 'all'">查看全部 {{ counts.total }} 项</button>
+          <button v-else-if="!weldOnly && counts.program" class="underline hover:op-80" @click="typeFilter = 'program'">只看 {{ counts.program }} 个程序变更</button>
+          <span v-if="weldOnly" class="ml-1.5 badge badge-code">焊接程序</span>
         </p>
       </div>
     </section>
@@ -134,7 +162,7 @@ function open(c: ChangeEntry) {
             {{ counts.total }}
           </div>
           <div class="text-[11px] op-45">
-            变更文件
+            {{ weldOnly ? '焊接程序' : '变更文件' }}
           </div>
         </div>
         <div>
@@ -199,6 +227,14 @@ function open(c: ChangeEntry) {
             <option value="comment">注释 / 时间戳</option>
             <option value="config">非程序</option>
           </select>
+          <label
+            class="flex items-center gap-1.5 px-2.5 py-1.5 rounded border text-xs cursor-pointer select-none transition"
+            :class="weldOnly ? 'border-amber-500 bg-amber-500/8 op-100' : 'border-base op-65 hover:op-90'"
+            title="STYLE 主程序与 *_WELD 焊接轨迹；不含修磨、换帽、搬运程序"
+          >
+            <input v-model="weldOnly" type="checkbox">
+            只看焊接程序
+          </label>
           <span class="text-xs op-35 ml-auto">{{ filtered.length }} 项</span>
         </div>
         <div class="flex flex-wrap items-center gap-1.5 mt-2">
