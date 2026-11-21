@@ -1,0 +1,67 @@
+/PROG  RELEASE_PART	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "GRIP";
+PROG_SIZE	= 780;
+CREATE		= DATE 26-04-17  TIME 16:19:10;
+MODIFIED	= DATE 26-04-17  TIME 16:19:10;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 41;
+MEMORY_SIZE	= 1248;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= *,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  LBL[1] ;
+   2:   ;
+   3:  R[15]=AR[1]    ;
+   4:  DO[314: * ]=ON ;
+   5:  SELECT R[15]=1,JMP LBL[10] ;
+   6:  SELECT R[15]=2,JMP LBL[20] ;
+   7:         ELSE,JMP LBL[2] ;
+   8:   ;
+   9:  LBL[10] ;
+  10:  DO[329: * ]=OFF ;
+  11:  DO[330: * ]=ON ;
+  12:   ;
+  13:   ;
+  14:  WAIT DI[321: * ]=ON AND DI[323: * ]=ON TIMEOUT,LBL[2] ;
+  15:  WAIT DI[325: * ]=ON AND DI[327: * ]=ON TIMEOUT,LBL[2] ;
+  16:  WAIT DI[322: * ]=OFF AND DI[324: * ]=OFF TIMEOUT,LBL[2] ;
+  17:  WAIT DI[326: * ]=OFF AND DI[328: * ]=OFF TIMEOUT,LBL[2] ;
+  18:   ;
+  19:   ;
+  20:  JMP LBL[99] ;
+  21:   ;
+  22:  LBL[20] ;
+  23:  DO[331: * ]=OFF ;
+  24:  DO[332: * ]=ON ;
+  25:   ;
+  26:  WAIT DI[313: * :抓手1夹头1打开到位]=ON AND DI[315: * :抓手1夹头2打开到位]=ON AND DI[317: * :抓手1夹头3打开到位]=ON TIMEOUT,LBL[2] ;
+  27:   ;
+  28:  WAIT DI[314: * :抓手1夹头1关闭到位]=OFF AND DI[316: * :抓手1夹头2关闭到位]=OFF AND DI[318: * :抓手1夹头3关闭到位]=OFF TIMEOUT,LBL[2] ;
+  29:   ;
+  30:   ;
+  31:  JMP LBL[99] ;
+  32:   ;
+  33:   ;
+  34:   ;
+  35:  LBL[2] ;
+  36:   ;
+  37:  UALM[4] ;
+  38:   ;
+  39:  JMP LBL[1] ;
+  40:   ;
+  41:  LBL[99] ;
+/POS
+/END

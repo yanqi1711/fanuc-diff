@@ -1,0 +1,42 @@
+/PROG  TD_DRESS_END	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "";
+PROG_SIZE	= 546;
+CREATE		= DATE 24-02-04  TIME 11:43:42;
+MODIFIED	= DATE 24-05-23  TIME 15:20:42;
+FILE_NAME	= TD_DRESS;
+VERSION		= 0;
+LINE_COUNT	= 15;
+MEMORY_SIZE	= 858;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= *,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  !--****************************** ;
+   2:  !--*LiuCheng AutoMation* ;
+   3:  !--*PROGRAM:TipDresser Start* ;
+   4:  !--*TipDresser ON-OFF* ;
+   5:  !--****************************** ;
+   6:   ;
+   7:  R[51]=0    ;
+   8:  R[53]=R[53]+1    ;
+   9:  DO[21:OFF:ÇëÇóÐÞÄ£]=OFF ;
+  10:  DO[201:OFF:Ç¹1ÐÞÄ¥ÖÐ]=OFF ;
+  11:   ;
+  12:  DO[204:OFF:Ç¹1»»Ã±ÖÐ]=OFF ;
+  13:  DO[28:OFF:»»Ã±Î»ÖÃ]=OFF ;
+  14:   ;
+  15:  WAIT    .20(sec) ;
+/POS
+/END

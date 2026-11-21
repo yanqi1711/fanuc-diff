@@ -1,0 +1,66 @@
+/PROG  DRESS_ON	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "";
+PROG_SIZE	= 678;
+CREATE		= DATE 25-07-22  TIME 15:02:28;
+MODIFIED	= DATE 26-09-16  TIME 10:03:14;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 39;
+MEMORY_SIZE	= 1154;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= *,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  LBL[10] ;
+   2:  DO[260:OFF]=ON ;
+   3:  WAIT DI[260:OFF:偏置气缸工作位为on]=ON AND DI[263:OFF:摆臂气缸摆上]=ON AND DI[262:OFF]=OFF TIMEOUT,LBL[2] ;
+   4:   ;
+   5:   ;
+   6:  LBL[1] ;
+   7:   ;
+   8:  DO[260:OFF]=ON ;
+   9:  WAIT DI[262:OFF]=OFF    ;
+  10:   ;
+  11:  WAIT    .50(sec) ;
+  12:   ;
+  13:  DO[258:OFF]=ON ;
+  14:   ;
+  15:  WAIT DI[259:OFF]=ON AND DI[264:OFF:摆臂气缸摆下]=ON AND DI[263:OFF:摆臂气缸摆上]=OFF TIMEOUT,LBL[2] ;
+  16:   ;
+  17:  WAIT    .30(sec) ;
+  18:  DO[258:OFF]=OFF ;
+  19:  WAIT   1.00(sec) ;
+  20:   ;
+  21:  WAIT DI[262:OFF]=OFF    ;
+  22:  //WAIT    .10(sec) ;
+  23:  DO[260:OFF]=OFF ;
+  24:  WAIT DI[262:OFF]=ON    ;
+  25:  DO[259:OFF]=ON ;
+  26:  DO[257:OFF:刀片旋转]=PULSE,8.0sec ;
+  27:  WAIT DI[261:OFF]=ON+    ;
+  28:  JMP LBL[99] ;
+  29:   ;
+  30:   ;
+  31:  LBL[2] ;
+  32:   ;
+  33:  UALM[1] ;
+  34:   ;
+  35:  JMP LBL[10] ;
+  36:   ;
+  37:   ;
+  38:  LBL[99] ;
+  39:   ;
+/POS
+/END

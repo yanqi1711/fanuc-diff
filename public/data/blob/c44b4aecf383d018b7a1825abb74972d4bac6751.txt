@@ -1,0 +1,447 @@
+DIO____EMAIN
+$$VERSION
+CFG_FILE_VER
+ASG_LOG_PT
+ASG_LOG_PN
+ASG_N_PTS
+ASG_RACK_NO
+dccdccdddddddddddcccddd
+ASG_SLOT_NO
+ASG_PHY_PT
+ASG_PHY_PN
+NAME_LOG_PT
+NAME_LOG_PN
+NAME_NAME
+Fault reset
+Remote
+Hold
+Cycle start
+CE/CR Select b0
+CE/CR Select b1
+Remote LED
+Fault LED
+Batt alarm
+TP enabled
+*IMSTP
+*Hold
+*SFSPD
+Cycle stop
+Start
+Home
+Enable
+RSR1/PNS1/STYLE1
+RSR2/PNS2/STYLE2
+RSR3/PNS3/STYLE3
+RSR4/PNS4/STYLE4
+RSR5/PNS5/STYLE5
+RSR6/PNS6/STYLE6
+RSR7/PNS7/STYLE7
+RSR8/PNS8/STYLE8
+PNS strobe
+Prod start
+Cmd enabled
+System ready
+Prg running
+Prg paused
+Motion held
+Fault
+At perch
+Busy
+ACK1/SNO1
+ACK2/SNO2
+ACK3/SNO3
+ACK4/SNO4
+ACK5/SNO5
+ACK6/SNO6
+ACK7/SNO7
+ACK8/SNO8
+SNACK
+Reserved
+DiIMSTP
+DiHOLD
+DiSFSPD
+DiCSTOPI
+DiFaultRESET
+DiSTART
+DiHONE
+DiENBL
+DiSTYLE1
+DiSTYLE2
+DiSTYLE3
+DiSTYLE4
+DiSTYLE5
+DiSTYLE6
+DiSTYLE7
+DiSTYLE8
+DiPNSTROBE
+DiPROD_START
+DiReserve
+DiResetFinish
+DiChangeToHome
+DiDryMode
+DiPaToHome1
+DiPaToHome2
+DiRunSEG1
+DiRunSEG2
+DiRunSEG3
+DiRunSEG4
+DiRunSEG5
+DiRunSEG6
+DiRunSEG7
+DiRunSEG8
+DiRunSEG9
+DiRunSEG10
+DiRunSEG11
+DiRunSEG12
+DiRunSEG13
+DiRunSEG14
+DiRunSEG15
+DiSEG16
+DiZoneEnable1
+DiZoneEnable2
+DiZoneEnable3
+DiZoneEnable4
+DiZoneEnable5
+DiZoneEnable6
+DiZoneEnable7
+DiZoneEnable8
+DiZoneEnable9
+DiZoneEnable10
+DiZoneEnable11
+DiZoneEnable12
+DiZoneEnable13
+DiZoneEnable14
+DiZoneEnable15
+DiZoneEnable16
+DiZoneEnalbe17
+DiZoneEnalbe18
+DiZoneEnalbe19
+DiZoneEnalbe20
+DiZoneEnalbe21
+DiZoneEnalbe22
+DiZoneEnalbe23
+DiZoneEnalbe24
+DiZoneEnalbe25
+DiZoneEnalbe26
+DiZoneEnalbe27
+DiZoneEnalbe28
+DiZoneEnalbe29
+DiZoneEnalbe30
+DiZoneEnalbe31
+DiZoneEnalbe32
+DirectionNumber1
+DirectionNumber2
+DirectionNumber3
+DirectionNumber4
+Reserve
+DirectionNumber5
+DirectionNumber6
+DirectionNumber7
+DirectionNumber8
+DCodeOK
+DoCMDENBL
+DoSYSRDY
+DoPROGRUN
+DoPAUSED
+DoHELD
+DoFAULT
+DoATPERCH
+DoTPENBL
+DoBATALM
+DoBUSY
+DoSNO1
+DoSNO2
+DoSNO3
+DoSNO4
+DoSNO5
+DoSNO6
+DoSNO7
+DoSNO8
+DoSNACK
+DoWorkFinish
+DoReqDress
+DoReqChange
+DoT1
+DoT2
+DoREMOTE
+DoAuto
+DoHome
+DoChangePos
+DoPance1
+DoPance2
+DoPaToHome1
+DoPaToHome2
+DoStepSeg1
+DoStepSeg2
+DoStepSeg3
+DoStepSeg4
+DoStepSeg5
+DoStepSeg6
+DoStepSeg7
+DoStepSeg8
+DoStepSeg9
+DoStepSeg10
+DoStepSeg11
+DoStepSeg12
+DoStepSeg13
+DoStepSeg14
+DoStepSeg15
+DoStepSeg16
+DoZoneReq1
+DoZoneReq2
+DoZoneReq3
+DoZoneReq4
+DoZoneReq5
+DoZoneReq6
+DoZoneReq7
+DoZoneReq8
+DoZoneReq9
+DoZoneReq10
+DoZoneReq11
+DoZoneReq12
+DoZoneReq13
+DoZoneReq14
+DoZoneReq15
+DoZoneReq16
+DoZoneFree1
+DoZoneFree2
+DoZoneFree3
+DoZoneFree4
+DoZoneFree5
+DoZoneFree6
+DoZoneFree7
+DoZoneFree8
+DoZoneFree9
+DoZoneFree10
+DoZoneFree11
+DoZoneFree12
+DoZoneFree13
+DoZoneFree14
+DoZoneFree15
+DoZoneFree16
+DoZoneReq17
+DoZoneReq18
+DoZoneReq19
+DoZoneReq20
+DoZoneReq21
+DoZoneReq22
+DoZoneReq23
+DoZoneReq24
+DoZoneReq25
+DoZoneReq26
+DoZoneReq27
+DoZoneReq28
+DoZoneReq29
+DoZoneReq30
+DoZoneReq31
+DoZoneReq32
+DoZoneFree17
+DoZoneFree18
+DoZoneFree19
+DoZoneFree20
+DoZoneFree21
+DoZoneFree22
+DoZoneFree23
+DoZoneFree24
+DoZoneFree25
+DoZoneFree26
+DoZoneFree27
+DoZoneFree28
+DoZoneFree29
+DoZoneFree30
+DoZoneFree31
+DoZoneFree32
+DoDirectionNumbe
+DoGiWeldCount1
+DoGiWeldCount2
+DoGiWeldCount3
+DoGiWeldCount4
+DoGiWeldCount5
+DoGiWeldCount6
+DoGiWeldCount7
+DoGiWeldCount8
+DoEndSEG1
+DoEndSEG2
+DoEndSEG3
+DoEndSEG4
+DoEndSEG5
+DoEndSEG6
+DoEndSEG7
+DoEndSEG8
+DoEndSEG9
+DoEndSEG10
+DoEndSEG11
+DoEndSEG12
+DoEndSEG13
+DoEndSEG14
+DoEndSEG15
+DoEndSEG16
+ZoneFree
+Zone Req
+Step Seg
+End Seg
+Seg Enable
+Zone Enable
+Series1
+Series2
+Series4
+Series8
+Series16
+Series32
+Series64
+Series128
+Start UP
+Weld Mode
+Alarm Reset
+Step up Reset
+Step Change
+Step Up All Rese
+Weld Wait
+Monitor Change
+Weld End
+StartUpUnderway
+Step1
+Step2
+Step4
+Step8
+StepLast
+StepEnd
+Alarm Code 1
+Alarm Code 2
+Alarm Code 4
+Alarm Code 8
+Alarm Code 16
+Alarm Code 32
+Alarm Code 64
+--------
+MonitorData 1
+MonitorData 2
+MonitorData 4
+MonitorData 8
+MonitorData 16
+MonitorData 32
+MonitorData 64
+MonitorData 128
+MonitorData 256
+MonitorData 512
+Tool ID 1
+Tool ID 2
+Tool ID 4
+Class_A1_Enable
+g1_flow1_ok
+diG1WS_ValveClsd
+diG1WS_Bypassed
+diWS_MinFlow
+diG1WS_CapLoss
+diGS_ PowerOK
+FlowRate 1
+FlowRate 2
+FlowRate 4
+FlowRate 8
+FlowRate 16
+FlowRate 32
+FlowRate 64
+FlowRate 128
+isLeakDetected
+isFLowOK
+isFlowCaution
+isFlowWaring
+isFlowOff
+Air Ok
+diUser2
+diUser3
+giFlowWarning 1
+giFlowWarning 2
+giFlowWarning 4
+giFlowWarning 8
+giFlowWarning 16
+giFlowWarning 32
+giFlowWarning  6
+giFlowWarning 12
+giFlowFault 1
+giFlowFault 2
+giFlowFault 4
+giFlowFault 8
+giFlowFault 16
+giFlowFault 32
+giFlowFault 64
+giFlowFault 128
+giLeakResponse 1
+giLeakResponse 2
+giLeakResponse 4
+giLeakResponse 8
+giLeakResponse 3
+giLeakResponse 6
+giDelay 1
+giDelay 2
+giDelay 4
+giDelay 8
+giDelay 16
+giDelay 32
+giDelay 64
+giDelay 128
+isStartupLeak 1
+isStartupLeak 2
+isStartupLeak 4
+isStartupLeak 8
+isStartupLeak 16
+isStartupLeak 32
+isStartupLeak 64
+isStartupLeak 12
+doRstG1WaterSvr
+g1_Close_Valve
+doG1WSBypass
+doUser1
+doUser2
+doUser3
+Restore factory
+Tool ID
+Prg Num
+Weld Prg
+TipDresserStartM
+GO_SpotCount
+DirectionNumber
+FLowOK
+1...
+(WC)
+STUD
+V1_OPEN
+V1_CLOSE
+V2_OPEN
+V2_CLOSE
+V3_OPEN
+V3_CLOSE
+V1_1_OPEN
+V1_1_CLOSE
+V1_2_OPEN
+V1_2_CLOSE
+V2_1_OPEN
+V2_1_CLOSE
+V2_2_OPEN
+V2_2_CLOSE
+V2_3_OPEN
+V2_3_CLOSE
+V2_4_OPEN
+V2_4_CLOSE
+V3_1_OPEN
+V3_1_CLOSE
+Sensor1
+Sensor2
+Tip wear down
+-200
+NAME_NAME2
+settings
+MODE_LOG_PT
+MODE_FRST_PN
+MODE_LAST_PN
+MODE_MODE
+AIS_RACK_NO
+AIS_SLOT_NO
+AIS_SEQUENCE
+DEV_RACK
+DEV_SLOT
+DEV_MOD_ID
+DEV_DATA_TYPE
+DEV_PARAM1
+DEV_PARAM2
+DEV_COMMENT

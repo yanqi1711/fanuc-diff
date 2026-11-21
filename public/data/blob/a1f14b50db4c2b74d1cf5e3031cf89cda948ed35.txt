@@ -1,0 +1,74 @@
+/PROG  TIPDRESSER_STRAT	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "TipDress ON-OFF ";
+PROG_SIZE	= 1148;
+CREATE		= DATE 23-12-26  TIME 02:33:10;
+MODIFIED	= DATE 24-01-29  TIME 18:18:06;
+FILE_NAME	= MOTOR_ON;
+VERSION		= 0;
+LINE_COUNT	= 47;
+MEMORY_SIZE	= 1624;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= *,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  !--****************************** ;
+   2:  !--*LiuCheng AutoMation* ;
+   3:  !--*PROGRAM:TipDresser Start* ;
+   4:  !--*TipDresser ON-OFF* ;
+   5:  !--****************************** ;
+   6:   ;
+   7:  $WAITTMOUT=500 ;
+   8:   ;
+   9:  !----TipDresser Statu------ ;
+  10:  LBL[10] ;
+  11:  R[49]=AR[1]    ;
+  12:  SELECT R[49]=1,JMP LBL[20] ;
+  13:         =2,JMP LBL[30] ;
+  14:   ;
+  15:  UALM[1] ;
+  16:  JMP LBL[10] ;
+  17:   ;
+  18:  !----TipDresser ON--------- ;
+  19:  LBL[20] ;
+  20:  !--TipDress Mem-- ;
+  21:  F[10:OFF:修模过程标志]=(ON) ;
+  22:  !--Blow ON-- ;
+  23:  DO[533: * ]=ON ;
+  24:  WAIT    .50(sec) ;
+  25:   ;
+  26:  !--TipDresser Rotation Chk-- ;
+  27:  WAIT DI[502: * ]=ON+ TIMEOUT,LBL[80] ;
+  28:  END ;
+  29:   ;
+  30:  !----TipDresser OFF-------- ;
+  31:  LBL[30] ;
+  32:  !--TipDress Mem-- ;
+  33:  F[10:OFF:修模过程标志]=(OFF) ;
+  34:  !--Blow OFF-- ;
+  35:  DO[533: * ]=OFF ;
+  36:   ;
+  37:  IF (AR[2]=0),JMP LBL[99] ;
+  38:   ;
+  39:  $WAITTMOUT=200 ;
+  40:  WAIT DI[502: * ]=ON+ TIMEOUT,LBL[99] ;
+  41:   ;
+  42:  !----TipDresser Err-------- ;
+  43:  LBL[80] ;
+  44:  UALM[6] ;
+  45:  JMP LBL[10] ;
+  46:   ;
+  47:  LBL[99] ;
+/POS
+/END

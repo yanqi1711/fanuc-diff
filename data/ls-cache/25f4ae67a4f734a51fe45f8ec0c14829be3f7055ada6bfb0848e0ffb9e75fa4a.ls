@@ -1,0 +1,46 @@
+/PROG  STYLE25
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "ED56_OP200_Main";
+PROG_SIZE	= 502;
+CREATE		= DATE 26-03-17  TIME 21:22:58;
+MODIFIED	= DATE 26-03-17  TIME 21:23:24;
+FILE_NAME	= STYLE24;
+VERSION		= 0;
+LINE_COUNT	= 19;
+MEMORY_SIZE	= 838;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  TIMER[10]=RESET ;
+   2:  TIMER[10]=START ;
+   3:   ;
+   4:  WAIT GI[6:0:³ÌÐòºÅ]=25    ;
+   5:  GO[6:0:³ÌÐòºÅ]=(25) ;
+   6:   ;
+   7:  CALL SEGMENT(1) ;
+   8:  WAIT    .50(sec) ;
+   9:  CALL FINISHSEG(1) ;
+  10:   ;
+  11:   ;
+  12:   ;
+  13:  CALL G3G5_OP200_WELD    ;
+  14:   ;
+  15:   ;
+  16:  CALL END_TASK    ;
+  17:  CALL MOVEHOME    ;
+  18:  TIMER[10]=STOP ;
+  19:  GO[6:0:³ÌÐòºÅ]=(0) ;
+/POS
+/END

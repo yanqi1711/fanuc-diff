@@ -1,0 +1,40 @@
+/PROG  TD_CHANGE_END	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "";
+PROG_SIZE	= 516;
+CREATE		= DATE 24-02-04  TIME 11:42:20;
+MODIFIED	= DATE 24-05-23  TIME 15:18:22;
+FILE_NAME	= CHANGE_S;
+VERSION		= 0;
+LINE_COUNT	= 13;
+MEMORY_SIZE	= 836;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= *,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  !--****************************** ;
+   2:  !--*LiuCheng AutoMation* ;
+   3:  !--*PROGRAM:TipDresser Start* ;
+   4:  !--*TipDresser ON-OFF* ;
+   5:  !--****************************** ;
+   6:   ;
+   7:  R[51]=0    ;
+   8:  R[53]=0    ;
+   9:  DO[22:OFF:请求换帽]=OFF ;
+  10:  DO[204:OFF:枪1换帽中]=OFF ;
+  11:  DO[28:OFF:换帽位置]=OFF ;
+  12:   ;
+  13:  WAIT    .20(sec) ;
+/POS
+/END

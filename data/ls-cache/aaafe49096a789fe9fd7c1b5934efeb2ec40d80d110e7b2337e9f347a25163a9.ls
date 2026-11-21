@@ -1,0 +1,79 @@
+/PROG  STUD1_PARITYCAL	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "Stud1 ParityCal";
+PROG_SIZE	= 1340;
+CREATE		= DATE 23-04-25  TIME 17:31:00;
+MODIFIED	= DATE 26-03-13  TIME 22:28:34;
+FILE_NAME	= STUD1_PA;
+VERSION		= 0;
+LINE_COUNT	= 53;
+MEMORY_SIZE	= 1760;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= *,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  ! ******************************* ;
+   2:  !           SERES MOTORS ;
+   3:  ! FANUC ;
+   4:  ! STUD1_HONGBAI ;
+   5:  ! STUD1_PARITYCAL ;
+   6:  ! REV: 1.0.0 ;
+   7:  ! ******************************* ;
+   8:   ;
+   9:  LBL[1:BEGIN] ;
+  10:  ! Init R101 to R107 ;
+  11:  R[101]=0    ;
+  12:  R[102]=0    ;
+  13:  R[103]=0    ;
+  14:  R[104]=0    ;
+  15:  R[105]=0    ;
+  16:  R[106]=0    ;
+  17:  R[107]=0    ;
+  18:  R[108]=0    ;
+  19:   ;
+  20:  ! Calculate ParityChkCode ;
+  21:  IF (DO[697: * :‘§¡Ùµ•‘™1]),R[101]=(1) ;
+  22:  IF (DO[698: * :‘§¡Ùµ•‘™2]),R[102]=(1) ;
+  23:  IF (DO[699: * :‘§¡Ùµ•‘™4]),R[103]=(1) ;
+  24:  IF (DO[700: * :‘§¡Ùµ•‘™8]),R[104]=(1) ;
+  25:  IF (DO[701: * :‘§¡Ù–Õ∫≈1]),R[105]=(1) ;
+  26:  IF (DO[702: * :‘§¡Ù–Õ∫≈2]),R[106]=(1) ;
+  27:  IF (DO[703: * :‘§¡Ù–Õ∫≈4]),R[107]=(1) ;
+  28:  R[108]=(R[101]+R[102]+R[103]+R[104]+R[105]+R[106]+R[107]) ;
+  29:   ;
+  30:  ! Check R108 StudSumofParity ;
+  31:  IF (R[108]=0) THEN ;
+  32:  MESSAGE[R108 Calculation error] ;
+  33:  MESSAGE[R108 not 0] ;
+  34:  //GO[3:0:Zone Req]=137 ;
+  35:  UALM[137] ;
+  36:  //GO[3:0:Zone Req]=0 ;
+  37:  JMP LBL[1] ;
+  38:  ENDIF ;
+  39:   ;
+  40:  ! Set ParityChkCode ;
+  41:  IF (R[108]=1 OR R[108]=3 OR R[108]=5 OR R[108]=7),DO[704: * :‘§¡Ù–Õ∫≈8]=(ON) ;
+  42:  JMP LBL[99] ;
+  43:  DO[704: * :‘§¡Ù–Õ∫≈8]=OFF ;
+  44:   ;
+  45:  LBL[99:END] ;
+  46:  R[101]=0    ;
+  47:  R[102]=0    ;
+  48:  R[103]=0    ;
+  49:  R[104]=0    ;
+  50:  R[105]=0    ;
+  51:  R[106]=0    ;
+  52:  R[107]=0    ;
+  53:  R[108]=0    ;
+/POS
+/END

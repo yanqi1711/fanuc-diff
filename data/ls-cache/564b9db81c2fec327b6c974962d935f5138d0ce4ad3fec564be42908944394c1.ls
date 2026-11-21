@@ -1,0 +1,168 @@
+/PROG  ED44_DROP_OP220
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "DORP_OP220";
+PROG_SIZE	= 1955;
+CREATE		= DATE 26-04-18  TIME 12:58:06;
+MODIFIED	= DATE 26-05-10  TIME 18:54:50;
+FILE_NAME	= ED44_PIC;
+VERSION		= 0;
+LINE_COUNT	= 42;
+MEMORY_SIZE	= 2351;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  UFRAME_NUM=0 ;
+   2:  UTOOL_NUM=1 ;
+   3:  PAYLOAD[1:GUN] ;
+   4:  CALL SEGMENT(6) ;
+   5:   ;
+   6:  !R18_R19干涉区 ;
+   7:  CALL ENTER_ZONE(8) ;
+   8:J PR[1:HOME] 100% FINE    ;
+   9:  CALL CHECK_PART(1) ;
+  10:  CALL GRIP_PART(1) ;
+  11:  CALL GRIP_PART(2) ;
+  12:  !R18_R20干涉区 ;
+  13:  CALL ENTER_ZONE(11) ;
+  14:   ;
+  15:J P[2] 100% CNT100    ;
+  16:   ;
+  17:J P[4] 100% CNT100    ;
+  18:J P[8] 100% CNT100    ;
+  19:J P[7] 100% CNT50    ;
+  20:L P[6] 1500mm/sec FINE    ;
+  21:  --ch:DROP_POS ;
+  22:L P[5] 500mm/sec FINE    ;
+  23:  DO[329: * ]=OFF ;
+  24:  DO[330: * ]=ON ;
+  25:  DO[331: * ]=OFF ;
+  26:  DO[332: * ]=ON ;
+  27:  CALL FINISHSEG(6) ;
+  28:  CALL SEGMENT(7) ;
+  29:  CALL RELEASE_PART(1) ;
+  30:  CALL RELEASE_PART(2) ;
+  31:L P[1] 1000mm/sec CNT10    ;
+  32:  CALL CHECK_NO_PART(1) ;
+  33:J P[11] 100% CNT50    ;
+  34:J P[10] 100% CNT100    ;
+  35:J P[9] 100% CNT100    ;
+  36:J P[3] 100% CNT100    ;
+  37:J PR[1:HOME] 100% FINE    ;
+  38:  CALL FINISHSEG(7) ;
+  39:  !R18_R20干涉区 ;
+  40:  CALL EXIT_ZONE(11) ;
+  41:  !R18_R19干涉区 ;
+  42:  CALL EXIT_ZONE(8) ;
+/POS
+P[1]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   381.070  mm,	Y = -2381.018  mm,	Z =  -309.173  mm,
+	W =   179.960 deg,	P =      .094 deg,	R =      .464 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.278  mm
+};
+P[2]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   794.798  mm,	Y = -1130.767  mm,	Z =  1336.750  mm,
+	W =   145.049 deg,	P =   -20.827 deg,	R =     7.729 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.277  mm
+};
+P[3]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   794.798  mm,	Y = -1130.767  mm,	Z =  1336.750  mm,
+	W =   145.049 deg,	P =   -20.827 deg,	R =     7.729 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.277  mm
+};
+P[4]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   410.133  mm,	Y = -1877.428  mm,	Z =   792.197  mm,
+	W =   165.350 deg,	P =    -3.575 deg,	R =     1.169 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.278  mm
+};
+P[5]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   380.792  mm,	Y = -2387.544  mm,	Z =  -348.747  mm,
+	W =   179.906 deg,	P =      .227 deg,	R =      .398 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.273  mm
+};
+P[6]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   380.820  mm,	Y = -2387.002  mm,	Z =  -339.128  mm,
+	W =   179.908 deg,	P =      .227 deg,	R =      .398 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.274  mm
+};
+P[7]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   380.970  mm,	Y = -2387.436  mm,	Z =  -292.792  mm,
+	W =   179.908 deg,	P =      .227 deg,	R =      .397 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.273  mm
+};
+P[8]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   353.575  mm,	Y = -2242.759  mm,	Z =   519.847  mm,
+	W =   167.180 deg,	P =    -2.319 deg,	R =      .713 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.278  mm
+};
+P[9]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   410.133  mm,	Y = -1877.428  mm,	Z =   792.197  mm,
+	W =   165.350 deg,	P =    -3.575 deg,	R =     1.169 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.278  mm
+};
+P[10]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   353.575  mm,	Y = -2242.759  mm,	Z =   519.847  mm,
+	W =   167.180 deg,	P =    -2.319 deg,	R =      .713 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.278  mm
+};
+P[11]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   381.071  mm,	Y = -2381.019  mm,	Z =    37.524  mm,
+	W =   179.960 deg,	P =      .094 deg,	R =      .464 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    59.278  mm
+};
+/END

@@ -1,0 +1,8 @@
+tb_cart 1           -- cartesian 1. cycle priority 2. path priority
+tb_jnt 1            -- joint 1. cycle priority 2. path priority
+!MME>flange_type 1 -- Generated Automatically
+angle 0  -- mount angle
+payload 280  -- max payload
+j1_range 1          -- 1.-185..185 2.-180..180
+flange_type 1 -- Generated Automatically
+ENDOFL              -- end of the file

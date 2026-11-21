@@ -1,0 +1,43 @@
+/PROG  STYLE211
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "Tipchange_Main";
+PROG_SIZE	= 462;
+CREATE		= DATE 24-08-18  TIME 13:10:52;
+MODIFIED	= DATE 25-08-09  TIME 09:41:54;
+FILE_NAME	= STYLE31;
+VERSION		= 0;
+LINE_COUNT	= 16;
+MEMORY_SIZE	= 802;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  TIMER[10]=RESET ;
+   2:  TIMER[10]=START ;
+   3:   ;
+   4:  WAIT GI[6:0:³ÌÐòºÅ]=211    ;
+   5:  R[6]=GI[6:0:³ÌÐòºÅ]    ;
+   6:  GO[6:0:³ÌÐòºÅ]=211 ;
+   7:   ;
+   8:J PR[1:HOME] 100% FINE    ;
+   9:   ;
+  10:  CALL TIPCHANGE_GUN    ;
+  11:  CALL TIPDRESS_GUN    ;
+  12:  CALL END_TASK    ;
+  13:   ;
+  14:  CALL MOVEHOME    ;
+  15:  TIMER[10]=STOP ;
+  16:   ;
+/POS
+/END

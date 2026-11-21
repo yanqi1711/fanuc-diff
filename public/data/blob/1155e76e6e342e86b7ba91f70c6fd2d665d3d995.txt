@@ -1,0 +1,58 @@
+/PROG  TIP_BG	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "TIP_BG";
+PROG_SIZE	= 888;
+CREATE		= DATE 22-01-13  TIME 16:43:50;
+MODIFIED	= DATE 25-03-30  TIME 20:03:42;
+FILE_NAME	= WATER_BG;
+VERSION		= 0;
+LINE_COUNT	= 32;
+MEMORY_SIZE	= 1392;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= *,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  !--****************************** ;
+   2:  !--*LiuCheng AutoMation* ;
+   3:  !--*PROGRAM:Tip_BG* ;
+   4:  !--*TipDresser Auto Run* ;
+   5:  !--****************************** ;
+   6:   ;
+   7:  !----TipDresser ON------------- ;
+   8:  LBL[10] ;
+   9:  IF (F[10:OFF:修模过程标志] AND UO[3:OFF:Prg running]),DO[509: * :零急嗪�5]=(ON) ;
+  10:   ;
+  11:  !----TipDresser Off------------ ;
+  12:  LBL[20] ;
+  13:  IF (!F[10:OFF:修模过程标志] OR !UO[3:OFF:Prg running]),DO[509: * :零急嗪�5]=(OFF) ;
+  14:   ;
+  15:  LBL[30] ;
+  16:  IF (!DO[503: * ]),JMP LBL[99] ;
+  17:   ;
+  18:  IF (!UO[3:OFF:Prg running]),JMP LBL[100] ;
+  19:   ;
+  20:  !----TipDresser Rotation Timer- ;
+  21:  R[55]=R[55]+.01    ;
+  22:  IF (R[55]>R[56]),JMP LBL[80] ;
+  23:  JMP LBL[100] ;
+  24:   ;
+  25:  !----TipDresser Rot Overtime--- ;
+  26:  LBL[80] ;
+  27:  UALM[1] ;
+  28:   ;
+  29:  LBL[99] ;
+  30:  R[55]=0    ;
+  31:   ;
+  32:  LBL[100] ;
+/POS
+/END

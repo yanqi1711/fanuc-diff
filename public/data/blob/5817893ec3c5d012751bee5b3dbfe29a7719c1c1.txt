@@ -1,0 +1,160 @@
+/PROG  TIPDRESS_GUN
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "Tipdress_Gun";
+PROG_SIZE	= 1759;
+CREATE		= DATE 26-03-13  TIME 11:22:44;
+MODIFIED	= DATE 26-03-20  TIME 10:44:36;
+FILE_NAME	= TIPCHANG;
+VERSION		= 0;
+LINE_COUNT	= 33;
+MEMORY_SIZE	= 2159;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  !op110气缸打开需要验证 ;
+   2:  UFRAME_NUM=0 ;
+   3:  UTOOL_NUM=1 ;
+   4:  PAYLOAD[1:GUN] ;
+   5:   ;
+   6:  DO[201:OFF:枪1修磨中]=ON ;
+   7:  --ch:WITH R9 WELD ;
+   8:  CALL ENTER_ZONE(3) ;
+   9:   ;
+  10:J PR[1:HOME] 100% FINE    ;
+  11:J P[3] 100% CNT100    ;
+  12:J P[1] 100% CNT50    ;
+  13:J P[2] 100% CNT50    ;
+  14:J P[4] 100% FINE    ;
+  15:L P[5] 2000mm/sec FINE    ;
+  16:  DO[257:OFF:刀片旋转]=PULSE,5.0sec ;
+  17:   ;
+  18:  WAIT DI[257:OFF]=ON+    ;
+  19:  !修磨位 ;
+  20:L P[6] 2000mm/sec FINE
+    :  TIPDRESS[SD=1,P=10,t=6.0,TD=1,ED=1]    ;
+  21:   ;
+  22:L P[7] 2000mm/sec FINE    ;
+  23:  DO[257:OFF:刀片旋转]=OFF ;
+  24:J P[8] 100% CNT100    ;
+  25:J P[9] 100% CNT100    ;
+  26:J P[10] 100% CNT100    ;
+  27:J P[11] 100% CNT100    ;
+  28:J PR[1:HOME] 100% FINE    ;
+  29:  CALL WR_UPD01(1,0) ;
+  30:  CALL TD_DRESS_END    ;
+  31:  --ch:WITH R9 WELD ;
+  32:  CALL EXIT_ZONE(3) ;
+  33:   ;
+/POS
+P[1]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   305.159  mm,	Y =  1311.649  mm,	Z =   904.730  mm,
+	W =   -16.510 deg,	P =    -3.080 deg,	R =   103.133 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.243  mm
+};
+P[2]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   467.390  mm,	Y =  1097.089  mm,	Z =  -248.016  mm,
+	W =    -1.434 deg,	P =     4.993 deg,	R =   107.428 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.243  mm
+};
+P[3]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1198.836  mm,	Y =  1324.671  mm,	Z =  1925.039  mm,
+	W =   -56.681 deg,	P =   -41.641 deg,	R =    92.012 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.241  mm
+};
+P[4]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   309.646  mm,	Y =  1190.167  mm,	Z =  -216.201  mm,
+	W =    -3.758 deg,	P =     -.782 deg,	R =   114.312 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   146.238  mm
+};
+P[5]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   293.697  mm,	Y =  1262.758  mm,	Z =  -167.138  mm,
+	W =      .388 deg,	P =     1.559 deg,	R =   113.496 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    99.238  mm
+};
+P[6]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   293.683  mm,	Y =  1262.744  mm,	Z =  -122.773  mm,
+	W =      .254 deg,	P =     1.186 deg,	R =   113.485 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    43.734  mm
+};
+P[7]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   293.697  mm,	Y =  1262.758  mm,	Z =  -167.138  mm,
+	W =      .388 deg,	P =     1.559 deg,	R =   113.496 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    99.238  mm
+};
+P[8]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   309.646  mm,	Y =  1190.167  mm,	Z =  -216.201  mm,
+	W =    -3.758 deg,	P =     -.782 deg,	R =   114.312 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   146.238  mm
+};
+P[9]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   467.390  mm,	Y =  1097.089  mm,	Z =  -248.016  mm,
+	W =    -1.434 deg,	P =     4.993 deg,	R =   107.428 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.243  mm
+};
+P[10]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   305.159  mm,	Y =  1311.649  mm,	Z =   904.730  mm,
+	W =   -16.510 deg,	P =    -3.080 deg,	R =   103.133 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.243  mm
+};
+P[11]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1198.836  mm,	Y =  1324.671  mm,	Z =  1925.039  mm,
+	W =   -56.681 deg,	P =   -41.641 deg,	R =    92.012 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.241  mm
+};
+/END

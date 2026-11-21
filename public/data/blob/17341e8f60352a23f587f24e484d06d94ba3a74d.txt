@@ -1,0 +1,92 @@
+/PROG  SERVICE_GRIP
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "服务位";
+PROG_SIZE	= 1107;
+CREATE		= DATE 26-03-14  TIME 17:20:50;
+MODIFIED	= DATE 26-03-20  TIME 16:50:22;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 20;
+MEMORY_SIZE	= 1423;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  UTOOL_NUM=1 ;
+   2:  UFRAME_NUM=0 ;
+   3:  PAYLOAD[1:GUN] ;
+   4:  CALL CHECK_NO_PART(1) ;
+   5:  CALL GRIP_PART(1) ;
+   6:  CALL GRIP_PART(2) ;
+   7:  WAIT DI[260:OFF:偏置气缸工作位为on]=ON AND DI[262:OFF]=OFF    ;
+   8:J PR[1:HOME] 100% FINE    ;
+   9:J P[1] 100% CNT100    ;
+  10:L P[3] 2000mm/sec CNT100    ;
+  11:L P[2] 1000mm/sec FINE    ;
+  12:  DO[211:OFF:预留]=ON ;
+  13:  WAIT DI[211:OFF:Reserve]=ON    ;
+  14:L P[5] 2000mm/sec CNT50    ;
+  15:J P[4] 100% CNT100    ;
+  16:J PR[1:HOME] 100% FINE    ;
+  17:  CALL RELEASE_PART(1) ;
+  18:  CALL RELEASE_PART(2) ;
+  19:  DO[211:OFF:预留]=OFF ;
+  20:   ;
+/POS
+P[1]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1556.787  mm,	Y =   857.889  mm,	Z =    13.741  mm,
+	W =   168.620 deg,	P =   -15.697 deg,	R =    57.094 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.872  mm
+};
+P[2]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1496.554  mm,	Y =   833.870  mm,	Z = -1069.456  mm,
+	W =   179.734 deg,	P =      .370 deg,	R =    55.593 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.871  mm
+};
+P[3]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1496.513  mm,	Y =   833.855  mm,	Z =  -449.322  mm,
+	W =   179.735 deg,	P =      .371 deg,	R =    55.593 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.872  mm
+};
+P[4]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1556.787  mm,	Y =   857.889  mm,	Z =    13.741  mm,
+	W =   168.620 deg,	P =   -15.697 deg,	R =    57.094 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.872  mm
+};
+P[5]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1496.513  mm,	Y =   833.855  mm,	Z =  -449.322  mm,
+	W =   179.735 deg,	P =      .371 deg,	R =    55.593 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.872  mm
+};
+/END

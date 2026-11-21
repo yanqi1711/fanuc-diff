@@ -1,0 +1,41 @@
+/PROG  CHECK_PART	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "GRIP";
+PROG_SIZE	= 364;
+CREATE		= DATE 25-07-17  TIME 15:16:50;
+MODIFIED	= DATE 26-03-15  TIME 15:41:32;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 15;
+MEMORY_SIZE	= 808;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= *,*,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  IF DI[29:OFF:¿ÕÑ­»·]=ON,JMP LBL[3] ;
+   2:   ;
+   3:  WAIT DI[325: * ]=ON AND DI[326: * ]=ON TIMEOUT,LBL[2] ;
+   4:   ;
+   5:  JMP LBL[3] ;
+   6:   ;
+   7:  LBL[2] ;
+   8:   ;
+   9:  UALM[1] ;
+  10:   ;
+  11:  JMP LBL[1] ;
+  12:   ;
+  13:  LBL[3] ;
+  14:   ;
+  15:   ;
+/POS
+/END

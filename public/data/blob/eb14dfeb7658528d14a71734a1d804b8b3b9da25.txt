@@ -1,0 +1,48 @@
+/PROG  STYLE127
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "STYLE127_Main";
+PROG_SIZE	= 552;
+CREATE		= DATE 25-07-22  TIME 19:41:06;
+MODIFIED	= DATE 25-07-28  TIME 21:08:10;
+FILE_NAME	= STYLE14;
+VERSION		= 0;
+LINE_COUNT	= 21;
+MEMORY_SIZE	= 896;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  TIMER[10]=RESET ;
+   2:  TIMER[10]=START ;
+   3:   ;
+   4:  WAIT GI[6:0:程序号]=127    ;
+   5:  GO[6:0:程序号]=(127) ;
+   6:   ;
+   7:  CALL SEGMENT(1) ;
+   8:  WAIT    .50(sec) ;
+   9:  CALL FINISHSEG(1) ;
+  10:   ;
+  11:   ;
+  12:   ;
+  13:  CALL PICK_OP10_X11    ;
+  14:  CALL WELD_OP20_X11    ;
+  15:  CALL DROP_OP25_X11    ;
+  16:   ;
+  17:   ;
+  18:  CALL END_TASK    ;
+  19:  CALL MOVEHOME    ;
+  20:  TIMER[10]=STOP ;
+  21:  GO[6:0:程序号]=(0) ;
+/POS
+/END

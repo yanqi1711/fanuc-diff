@@ -1,0 +1,8 @@
+SEND
+SYSV
+LMNEDIT
+Send
+PC SysV
+Macr
+MUAP
+LANG

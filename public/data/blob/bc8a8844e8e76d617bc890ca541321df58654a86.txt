@@ -1,0 +1,9 @@
+SEND
+DATA
+LMNEDIT
+Send
+PC Data
+=Ik
+Macro
+MUAP
+LANG

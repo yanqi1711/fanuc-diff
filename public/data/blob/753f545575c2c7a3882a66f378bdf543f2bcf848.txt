@@ -1,0 +1,53 @@
+/PROG  CHECK_TIP_STATUS	  Macro
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "Check_TipStatus ";
+PROG_SIZE	= 836;
+CREATE		= DATE 22-09-02  TIME 16:05:22;
+MODIFIED	= DATE 26-03-17  TIME 10:21:04;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 26;
+MEMORY_SIZE	= 1144;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  !--****************************** ;
+   2:  !--*LiuCheng AutoMation* ;
+   3:  !--*PROGRAM:Tip Check* ;
+   4:  !--*TipChange And Dress Count* ;
+   5:  !--****************************** ;
+   6:   ;
+   7:  !----Spot Count-------------- ;
+   8:  IF (R[51]>=R[50]) THEN ;
+   9:  DO[21:OFF:请求修模]=ON ;
+  10:  ENDIF ;
+  11:   ;
+  12:  !----Dress Count------------- ;
+  13:  IF (R[53]>=R[54]) THEN ;
+  14:  CALL TIPCHANGE_GUN    ;
+  15:   ;
+  16:  ENDIF ;
+  17:   ;
+  18:  !----TipWear Out Range------- ;
+  19:  IF ($SGGUN1.$SETUP.$WRDWN_TIP>R[52]) THEN ;
+  20:  CALL TIPCHANGE_GUN    ;
+  21:  ENDIF ;
+  22:   ;
+  23:  IF ($SGGUN1.$SETUP.$WRDWN_RBT>R[52]) THEN ;
+  24:  DO[22:OFF:请求换帽]=ON ;
+  25:  CALL TIPCHANGE_GUN    ;
+  26:  ENDIF ;
+/POS
+/END

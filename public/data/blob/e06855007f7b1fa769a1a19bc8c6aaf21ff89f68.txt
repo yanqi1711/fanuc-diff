@@ -1,0 +1,17 @@
+SET_
+TOOL
+LMNEDIT
+Calls
+KAREL p
+rogram f
+or setti
+rrent gr
+ipper nu
+mber.
+no argum
+is give
+n, the
+macro
+will abo
+LANG
+GRIPJ

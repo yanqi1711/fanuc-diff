@@ -1,0 +1,1587 @@
+/PROG  ED55_56_WELD_OP210
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "ED55_56_SPOT";
+PROG_SIZE	= 16751;
+CREATE		= DATE 26-03-13  TIME 15:10:24;
+MODIFIED	= DATE 26-07-07  TIME 11:20:36;
+FILE_NAME	= ED54_WEL;
+VERSION		= 0;
+LINE_COUNT	= 209;
+MEMORY_SIZE	= 17103;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  UFRAME_NUM=1 ;
+   2:  UTOOL_NUM=1 ;
+   3:  PAYLOAD[1:GUN] ;
+   4:  CALL CHECK_PART(1) ;
+   5:  CALL GRIP_PART(1) ;
+   6:  CALL GRIP_PART(2) ;
+   7:  CALL SEGMENT(5) ;
+   8:  //CALL ENTER_ZONE(7) ;
+   9:J PR[1:HOME] 100% FINE    ;
+  10:  //WAIT DI[260:OFF:偏置气缸工作位为on]=ON AND DI[262:OFF]=OFF    ;
+  11:J P[1] 100% CNT100    ;
+  12:J P[6] 100% CNT100    ;
+  13:J P[5] 100% CNT100    ;
+  14:J P[4] 100% CNT80    ;
+  15:J P[3] 100% CNT50    ;
+  16:  !033 ;
+  17:L P[2] 2000mm/sec CNT50
+    :  SPOT[SD=1,P=8,t=4.0,S=33,ED=1]    ;
+  18:J P[7] 100% CNT100    ;
+  19:  !032 ;
+  20:L P[8] 2000mm/sec CNT50
+    :  SPOT[SD=5,P=8,t=4.0,S=32,ED=5]    ;
+  21:J P[9] 100% CNT50    ;
+  22:J P[10] 100% CNT50    ;
+  23:  !034 ;
+  24:L P[11] 2000mm/sec CNT50
+    :  SPOT[SD=5,P=8,t=4.0,S=34,ED=5]    ;
+  25:J P[12] 100% CNT100    ;
+  26:J P[13] 100% CNT100    ;
+  27:J P[14] 100% CNT100    ;
+  28:J P[15] 100% CNT100    ;
+  29:J P[17] 100% CNT100    ;
+  30:J P[33] 100% CNT100    ;
+  31:J P[37] 100% CNT100    ;
+  32:J P[36] 100% CNT100    ;
+  33:J P[35] 100% CNT100    ;
+  34:  !038 ;
+  35:L P[34] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=8,t=4.0,S=38,ED=10]    ;
+  36:J P[38] 100% CNT100    ;
+  37:J P[39] 100% CNT100    ;
+  38:  !039 ;
+  39:L P[40] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=8,t=4.0,S=39,ED=10]    ;
+  40:J P[41] 100% CNT100    ;
+  41:  !040 ;
+  42:L P[42] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=8,t=4.0,S=40,ED=10]    ;
+  43:J P[43] 100% CNT70    ;
+  44:J P[44] 100% CNT100    ;
+  45:J P[45] 100% CNT100    ;
+  46:J P[46] 100% CNT100    ;
+  47:J P[47] 100% CNT100    ;
+  48:J P[48] 100% CNT100    ;
+  49:J P[49] 100% CNT100    ;
+  50:  !001 ;
+  51:L P[50] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=6,t=3.5,S=1,ED=10]    ;
+  52:J P[51] 100% CNT100    ;
+  53:  !002 ;
+  54:L P[52] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=6,t=3.5,S=2,ED=10]    ;
+  55:J P[53] 100% CNT100    ;
+  56:  !003 ;
+  57:L P[54] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=6,t=2.5,S=3,ED=10]    ;
+  58:J P[55] 100% CNT100    ;
+  59:J P[56] 100% CNT100    ;
+  60:  !004 ;
+  61:L P[57] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=6,t=2.5,S=4,ED=10]    ;
+  62:J P[58] 100% CNT100    ;
+  63:J P[59] 100% CNT100    ;
+  64:  !005 ;
+  65:L P[60] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=6,t=2.5,S=5,ED=10]    ;
+  66:J P[61] 100% CNT100    ;
+  67:J P[62] 100% CNT100    ;
+  68:  !048 ;
+  69:L P[63] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=8,t=3.5,S=48,ED=10]    ;
+  70:J P[64] 100% CNT100    ;
+  71:J P[65] 100% CNT100    ;
+  72:  !047 ;
+  73:L P[66] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=8,t=3.5,S=47,ED=10]    ;
+  74:J P[67] 100% CNT100    ;
+  75:J P[68] 100% CNT100    ;
+  76:J P[69] 100% CNT100    ;
+  77:  !006 ;
+  78:L P[70] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=8,t=4.8,S=6,ED=10]    ;
+  79:J P[71] 100% CNT100    ;
+  80:  !007 ;
+  81:L P[72] 2000mm/sec CNT50
+    :  SPOT[SD=10,P=8,t=4.1,S=7,ED=10]    ;
+  82:J P[73] 100% CNT100    ;
+  83:  !008 ;
+  84:L P[74] 2000mm/sec CNT50
+    :  SPOT[SD=5,P=8,t=4.1,S=8,ED=5]    ;
+  85:J P[75] 100% CNT50    ;
+  86:J P[76] 100% CNT80    ;
+  87:J P[77] 100% CNT100    ;
+  88:  !009 ;
+  89:L P[78] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=9,ED=11]    ;
+  90:J P[79] 100% CNT100    ;
+  91:  !010 ;
+  92:L P[80] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=10,ED=11]    ;
+  93:J P[81] 100% CNT100    ;
+  94:  !011 ;
+  95:L P[82] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=11,ED=11]    ;
+  96:J P[83] 100% CNT100    ;
+  97:  !012 ;
+  98:L P[84] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=12,ED=11]    ;
+  99:J P[85] 100% CNT100    ;
+ 100:  !013 ;
+ 101:L P[86] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=13,ED=11]    ;
+ 102:J P[87] 100% CNT100    ;
+ 103:  !014 ;
+ 104:L P[88] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=14,ED=11]    ;
+ 105:J P[89] 100% CNT100    ;
+ 106:  !015 ;
+ 107:L P[90] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=15,ED=11]    ;
+ 108:J P[91] 100% CNT100    ;
+ 109:  !016 ;
+ 110:L P[92] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=16,ED=11]    ;
+ 111:J P[93] 100% CNT100    ;
+ 112:  !017 ;
+ 113:L P[94] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=17,ED=11]    ;
+ 114:   ;
+ 115:  !017 ;
+ 116:L P[20] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=17,ED=11]    ;
+ 117:   ;
+ 118:   ;
+ 119:   ;
+ 120:J P[95] 100% CNT100    ;
+ 121:J P[96] 100% CNT100    ;
+ 122:  !018 ;
+ 123:L P[97] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=18,ED=11]    ;
+ 124:J P[98] 100% CNT100    ;
+ 125:J P[159] 100% CNT100    ;
+ 126:  //!018 ;
+ 127:  //L P[161] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=18,ED=11]    ;
+ 128:J P[160] 100% CNT100    ;
+ 129:   ;
+ 130:J P[99] 100% CNT100    ;
+ 131:  !049 ;
+ 132:L P[162] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=18,ED=11]    ;
+ 133:J P[163] 100% CNT100    ;
+ 134:J P[158] 100% CNT100    ;
+ 135:J P[100] 100% CNT100    ;
+ 136:J P[101] 100% CNT100    ;
+ 137:  !020 ;
+ 138:L P[102] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.1,S=20,ED=11]    ;
+ 139:  !021 ;
+ 140:L P[103] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=6,t=2.5,S=21,ED=11]    ;
+ 141:  !022 ;
+ 142:L P[104] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=6,t=2.5,S=22,ED=11]    ;
+ 143:  !023 ;
+ 144:L P[105] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=6,t=2.5,S=23,ED=11]    ;
+ 145:J P[106] 100% CNT100    ;
+ 146:  !024 ;
+ 147:L P[107] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=6,t=2.5,S=24,ED=11]    ;
+ 148:  !025 ;
+ 149:L P[108] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=6,t=2.5,S=25,ED=11]    ;
+ 150:  !026 ;
+ 151:L P[109] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=8,t=4.0,S=26,ED=11]    ;
+ 152:  !027 ;
+ 153:L P[110] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=6,t=2.2,S=27,ED=11]    ;
+ 154:  !028 ;
+ 155:L P[111] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=6,t=2.2,S=28,ED=11]    ;
+ 156:J P[112] 100% CNT100    ;
+ 157:J P[113] 100% CNT100    ;
+ 158:J P[114] 100% CNT100    ;
+ 159:J P[115] 100% CNT100    ;
+ 160:J P[23] 100% CNT100    ;
+ 161:J P[116] 100% CNT100    ;
+ 162:J P[117] 100% CNT100    ;
+ 163:J P[118] 100% CNT100    ;
+ 164:J P[119] 100% CNT100    ;
+ 165:  !029 ;
+ 166:L P[120] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=6,t=2.5,S=29,ED=11]    ;
+ 167:J P[121] 100% CNT100    ;
+ 168:J P[122] 100% CNT100    ;
+ 169:  !030 ;
+ 170:L P[123] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=6,t=2.5,S=30,ED=11]    ;
+ 171:J P[124] 100% CNT100    ;
+ 172:J P[125] 100% CNT100    ;
+ 173:  !031 ;
+ 174:L P[126] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=7,t=3.5,S=31,ED=11]    ;
+ 175:J P[127] 100% CNT100    ;
+ 176:J P[16] 100% CNT100    ;
+ 177:  //J P[128] 100% CNT100    ;
+ 178:J P[21] 100% CNT100    ;
+ 179:J P[22] 100% CNT100    ;
+ 180:  //J P[135] 100% CNT100    ;
+ 181:J P[134] 100% CNT100    ;
+ 182:J P[133] 100% CNT100    ;
+ 183:J P[132] 100% CNT100    ;
+ 184:J P[131] 100% CNT100    ;
+ 185:J P[130] 100% CNT100    ;
+ 186:  !041 ;
+ 187:L P[129] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=7,t=3.7,S=41,ED=11]    ;
+ 188:L P[136] 2000mm/sec CNT100    ;
+ 189:L P[137] 2000mm/sec CNT100    ;
+ 190:L P[138] 2000mm/sec CNT100    ;
+ 191:L P[139] 2000mm/sec CNT100    ;
+ 192:  !042 ;
+ 193:L P[18] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=7,t=3.7,S=42,ED=11]    ;
+ 194:  !043 ;
+ 195:L P[141] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=7,t=3.7,S=43,ED=11]    ;
+ 196:J P[142] 100% CNT100    ;
+ 197:J P[143] 100% CNT100    ;
+ 198:  !044 ;
+ 199:L P[19] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=7,t=3.7,S=44,ED=11]    ;
+ 200:  !045 ;
+ 201:L P[145] 2000mm/sec CNT50
+    :  SPOT[SD=11,P=7,t=3.7,S=45,ED=11]    ;
+ 202:J P[146] 100% CNT100    ;
+ 203:J P[147] 100% CNT100    ;
+ 204:J P[155] 100% CNT100    ;
+ 205:J P[156] 100% CNT100    ;
+ 206:J P[157] 100% CNT100    ;
+ 207:J PR[1:HOME] 100% FINE    ;
+ 208:  //CALL EXIT_ZONE(7) ;
+ 209:  CALL FINISHSEG(5) ;
+/POS
+P[1]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1175.677  mm,	Y = -1190.858  mm,	Z =  1018.736  mm,
+	W =   177.867 deg,	P =   -10.459 deg,	R =  -162.034 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   169.539  mm
+};
+P[2]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1104.989  mm,	Y =  -930.602  mm,	Z =   161.636  mm,
+	W =  -171.701 deg,	P =    -1.764 deg,	R =  -155.388 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    46.626  mm
+};
+P[3]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1102.334  mm,	Y =  -926.311  mm,	Z =    78.104  mm,
+	W =  -176.445 deg,	P =     -.030 deg,	R =  -155.377 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   215.667  mm
+};
+P[4]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1100.606  mm,	Y =  -984.485  mm,	Z =    88.186  mm,
+	W =  -176.445 deg,	P =     -.030 deg,	R =  -155.377 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   215.667  mm
+};
+P[5]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1193.052  mm,	Y = -1155.838  mm,	Z =    84.729  mm,
+	W =  -176.445 deg,	P =     -.030 deg,	R =  -155.377 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   215.667  mm
+};
+P[6]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1193.052  mm,	Y = -1155.838  mm,	Z =   597.369  mm,
+	W =  -176.445 deg,	P =     -.030 deg,	R =  -155.377 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   215.667  mm
+};
+P[7]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1107.230  mm,	Y =  -917.762  mm,	Z =    83.495  mm,
+	W =  -176.445 deg,	P =     -.030 deg,	R =  -155.377 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    28.700  mm
+};
+P[8]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1099.365  mm,	Y =  -917.656  mm,	Z =    72.212  mm,
+	W =  -176.445 deg,	P =     -.030 deg,	R =  -155.377 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    33.883  mm
+};
+P[9]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1096.980  mm,	Y =  -918.693  mm,	Z =   104.700  mm,
+	W =  -175.842 deg,	P =     1.285 deg,	R =  -155.370 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.200  mm
+};
+P[10]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1186.115  mm,	Y =  -881.845  mm,	Z =   108.918  mm,
+	W =  -175.842 deg,	P =     1.285 deg,	R =  -155.370 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.200  mm
+};
+P[11]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1189.531  mm,	Y =  -887.325  mm,	Z =    37.354  mm,
+	W =  -177.271 deg,	P =    -1.835 deg,	R =  -155.363 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    25.867  mm
+};
+P[12]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1190.669  mm,	Y =  -883.362  mm,	Z =    47.765  mm,
+	W =  -177.271 deg,	P =    -1.835 deg,	R =  -155.363 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   175.000  mm
+};
+P[13]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1198.688  mm,	Y =  -946.318  mm,	Z =    47.767  mm,
+	W =  -177.271 deg,	P =    -1.835 deg,	R =  -159.717 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   175.000  mm
+};
+P[14]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1204.903  mm,	Y = -1021.469  mm,	Z =    89.237  mm,
+	W =  -177.271 deg,	P =    -1.835 deg,	R =  -164.972 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   175.000  mm
+};
+P[15]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1124.635  mm,	Y = -1036.058  mm,	Z =   109.716  mm,
+	W =  -177.924 deg,	P =    -1.552 deg,	R =  -178.847 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   176.299  mm
+};
+P[16]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1458.480  mm,	Y =  -229.097  mm,	Z =   109.420  mm,
+	W =  -179.300 deg,	P =    -1.049 deg,	R =   -68.530 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    96.840  mm
+};
+P[17]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1028.965  mm,	Y = -1037.578  mm,	Z =   131.477  mm,
+	W =  -178.538 deg,	P =    -1.698 deg,	R =   166.095 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   177.706  mm
+};
+P[18]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   -13.763  mm,	Y =  -372.076  mm,	Z =  1198.744  mm,
+	W =   -88.234 deg,	P =    -2.035 deg,	R =    47.975 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    47.025  mm
+};
+P[19]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   -70.824  mm,	Y =  -419.169  mm,	Z =  1209.163  mm,
+	W =   -88.817 deg,	P =     -.705 deg,	R =    48.015 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    45.279  mm
+};
+P[20]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   646.144  mm,	Y =   227.200  mm,	Z =    73.703  mm,
+	W =  -178.433 deg,	P =    -2.298 deg,	R =    15.757 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    22.948  mm
+};
+P[21]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1418.973  mm,	Y =   -21.507  mm,	Z =   438.377  mm,
+	W =  -173.056 deg,	P =    11.526 deg,	R =   -52.587 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   109.155  mm
+};
+P[22]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1452.333  mm,	Y =  -145.354  mm,	Z =   227.393  mm,
+	W =  -177.891 deg,	P =     4.050 deg,	R =   -62.250 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   101.668  mm
+};
+P[23]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1293.772  mm,	Y =    17.213  mm,	Z =   154.959  mm,
+	W =  -178.454 deg,	P =    -2.266 deg,	R =   -20.791 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   129.033  mm
+};
+P[33]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   708.197  mm,	Y =  -668.921  mm,	Z =    89.183  mm,
+	W =   173.538 deg,	P =      .216 deg,	R =   118.407 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   182.200  mm
+};
+P[34]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   498.821  mm,	Y =  -466.393  mm,	Z =   -16.840  mm,
+	W =   177.151 deg,	P =    -1.726 deg,	R =   101.206 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    21.134  mm
+};
+P[35]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   490.840  mm,	Y =  -466.392  mm,	Z =    23.321  mm,
+	W =   172.686 deg,	P =     -.836 deg,	R =   101.306 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   180.000  mm
+};
+P[36]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   592.212  mm,	Y =  -495.576  mm,	Z =    25.625  mm,
+	W =   172.686 deg,	P =     -.836 deg,	R =   101.306 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   185.000  mm
+};
+P[37]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   701.048  mm,	Y =  -635.374  mm,	Z =    98.201  mm,
+	W =   173.649 deg,	P =     -.365 deg,	R =   107.707 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   183.955  mm
+};
+P[38]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   490.840  mm,	Y =  -466.392  mm,	Z =    23.320  mm,
+	W =   172.686 deg,	P =     -.836 deg,	R =   101.306 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    43.333  mm
+};
+P[39]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   476.322  mm,	Y =  -379.995  mm,	Z =    42.759  mm,
+	W =   170.446 deg,	P =     -.388 deg,	R =   101.330 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    43.333  mm
+};
+P[40]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   492.340  mm,	Y =  -373.559  mm,	Z =    17.172  mm,
+	W =   171.373 deg,	P =     -.573 deg,	R =   101.322 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    15.532  mm
+};
+P[41]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   476.322  mm,	Y =  -379.995  mm,	Z =    42.759  mm,
+	W =   170.446 deg,	P =     -.388 deg,	R =   101.330 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    43.333  mm
+};
+P[42]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   471.908  mm,	Y =  -378.217  mm,	Z =    -6.702  mm,
+	W =   175.639 deg,	P =    -1.419 deg,	R =   101.248 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    17.027  mm
+};
+P[43]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   436.804  mm,	Y =  -388.141  mm,	Z =    22.198  mm,
+	W =   172.088 deg,	P =     -.709 deg,	R =    96.897 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   205.000  mm
+};
+P[44]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   494.888  mm,	Y =  -408.229  mm,	Z =    24.406  mm,
+	W =   172.088 deg,	P =     -.709 deg,	R =    92.438 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   205.000  mm
+};
+P[45]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   567.598  mm,	Y =  -437.635  mm,	Z =    24.407  mm,
+	W =   172.088 deg,	P =     -.709 deg,	R =    76.090 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   205.000  mm
+};
+P[46]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   721.937  mm,	Y =  -441.574  mm,	Z =    24.406  mm,
+	W =   172.088 deg,	P =     -.709 deg,	R =    55.635 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   205.000  mm
+};
+P[47]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   863.552  mm,	Y =  -239.280  mm,	Z =   111.767  mm,
+	W =   172.088 deg,	P =     -.709 deg,	R =    31.217 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   205.000  mm
+};
+P[48]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   942.684  mm,	Y =    27.416  mm,	Z =   134.983  mm,
+	W =   178.494 deg,	P =    -1.798 deg,	R =    25.882 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   205.001  mm
+};
+P[49]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   705.561  mm,	Y =   122.458  mm,	Z =   113.862  mm,
+	W =   178.494 deg,	P =    -1.798 deg,	R =    25.882 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   105.001  mm
+};
+P[50]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   655.760  mm,	Y =    60.618  mm,	Z =    66.705  mm,
+	W =   179.572 deg,	P =    -2.322 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    17.220  mm
+};
+P[51]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   655.760  mm,	Y =    60.618  mm,	Z =    76.704  mm,
+	W =   179.572 deg,	P =    -2.322 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    22.200  mm
+};
+P[52]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   682.273  mm,	Y =    74.052  mm,	Z =    67.828  mm,
+	W =   179.571 deg,	P =    -2.323 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    18.950  mm
+};
+P[53]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   682.273  mm,	Y =    74.052  mm,	Z =    77.829  mm,
+	W =   179.571 deg,	P =    -2.323 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    35.533  mm
+};
+P[54]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   743.453  mm,	Y =   105.720  mm,	Z =    71.353  mm,
+	W =   179.570 deg,	P =    -2.324 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    20.530  mm
+};
+P[55]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   743.453  mm,	Y =   105.721  mm,	Z =    81.353  mm,
+	W =   179.570 deg,	P =    -2.324 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    55.533  mm
+};
+P[56]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   668.193  mm,	Y =   183.478  mm,	Z =    88.457  mm,
+	W =   179.570 deg,	P =    -2.324 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    56.533  mm
+};
+P[57]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   674.914  mm,	Y =   178.199  mm,	Z =    70.410  mm,
+	W =   179.570 deg,	P =    -2.324 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    21.033  mm
+};
+P[58]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   674.915  mm,	Y =   178.199  mm,	Z =    80.410  mm,
+	W =   179.570 deg,	P =    -2.324 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    45.533  mm
+};
+P[59]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   628.835  mm,	Y =   147.479  mm,	Z =    80.410  mm,
+	W =   179.570 deg,	P =    -2.324 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    45.533  mm
+};
+P[60]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   625.286  mm,	Y =   151.127  mm,	Z =    68.602  mm,
+	W =   179.570 deg,	P =    -2.324 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    20.367  mm
+};
+P[61]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   625.287  mm,	Y =   151.127  mm,	Z =    78.601  mm,
+	W =   179.570 deg,	P =    -2.324 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    45.533  mm
+};
+P[62]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   649.480  mm,	Y =   230.423  mm,	Z =    78.602  mm,
+	W =   179.570 deg,	P =    -2.324 deg,	R =    25.844 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    45.533  mm
+};
+P[63]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   651.455  mm,	Y =   230.396  mm,	Z =    56.018  mm,
+	W =  -179.651 deg,	P =     -.713 deg,	R =    25.824 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    20.531  mm
+};
+P[64]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   651.455  mm,	Y =   230.396  mm,	Z =    66.018  mm,
+	W =  -179.651 deg,	P =     -.713 deg,	R =    25.824 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    44.700  mm
+};
+P[65]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   623.136  mm,	Y =   205.916  mm,	Z =    66.019  mm,
+	W =  -179.651 deg,	P =     -.713 deg,	R =    25.824 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    44.700  mm
+};
+P[66]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   615.378  mm,	Y =   216.176  mm,	Z =    52.257  mm,
+	W =  -179.651 deg,	P =     -.713 deg,	R =    25.825 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    20.118  mm
+};
+P[67]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   640.494  mm,	Y =   156.797  mm,	Z =    70.992  mm,
+	W =  -179.651 deg,	P =     -.713 deg,	R =    22.340 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    40.533  mm
+};
+P[68]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   514.374  mm,	Y =    40.323  mm,	Z =   119.858  mm,
+	W =  -179.651 deg,	P =     -.713 deg,	R =    16.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    95.283  mm
+};
+P[69]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   450.751  mm,	Y =    40.321  mm,	Z =   119.814  mm,
+	W =  -179.652 deg,	P =     -.714 deg,	R =    16.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    95.284  mm
+};
+P[70]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   464.671  mm,	Y =    65.856  mm,	Z =    52.234  mm,
+	W =  -179.652 deg,	P =     -.714 deg,	R =    16.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    25.368  mm
+};
+P[71]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   464.671  mm,	Y =    63.264  mm,	Z =    62.234  mm,
+	W =  -179.652 deg,	P =     -.714 deg,	R =    16.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    22.200  mm
+};
+P[72]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   430.513  mm,	Y =    56.535  mm,	Z =    50.666  mm,
+	W =  -179.653 deg,	P =     -.715 deg,	R =    16.037 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    22.200  mm
+};
+P[73]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   430.513  mm,	Y =    56.535  mm,	Z =    60.666  mm,
+	W =  -179.653 deg,	P =     -.715 deg,	R =    16.037 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    22.200  mm
+};
+P[74]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   378.654  mm,	Y =    40.799  mm,	Z =    50.780  mm,
+	W =  -179.653 deg,	P =     -.715 deg,	R =    15.791 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=     9.533  mm
+};
+P[75]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   399.294  mm,	Y =    42.096  mm,	Z =    72.431  mm,
+	W =   176.797 deg,	P =      .289 deg,	R =    15.804 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    55.117  mm
+};
+P[76]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   399.295  mm,	Y =    42.096  mm,	Z =   157.100  mm,
+	W =   176.797 deg,	P =      .289 deg,	R =    15.804 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   154.700  mm
+};
+P[77]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   268.455  mm,	Y =   133.005  mm,	Z =   157.102  mm,
+	W =   176.797 deg,	P =      .289 deg,	R =    15.804 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   154.700  mm
+};
+P[78]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   250.710  mm,	Y =    90.148  mm,	Z =    53.637  mm,
+	W =  -179.035 deg,	P =     -.892 deg,	R =    15.782 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    21.214  mm
+};
+P[79]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   250.708  mm,	Y =    90.149  mm,	Z =    72.854  mm,
+	W =  -179.035 deg,	P =     -.892 deg,	R =    15.782 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    40.533  mm
+};
+P[80]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   304.852  mm,	Y =   103.589  mm,	Z =    55.094  mm,
+	W =  -179.035 deg,	P =     -.892 deg,	R =    15.782 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    14.867  mm
+};
+P[81]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   304.853  mm,	Y =   103.589  mm,	Z =    71.126  mm,
+	W =  -179.035 deg,	P =     -.892 deg,	R =    15.782 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    33.533  mm
+};
+P[82]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   344.998  mm,	Y =   116.636  mm,	Z =    54.912  mm,
+	W =  -179.036 deg,	P =     -.893 deg,	R =    15.783 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    19.784  mm
+};
+P[83]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   344.997  mm,	Y =   116.636  mm,	Z =    69.912  mm,
+	W =  -179.036 deg,	P =     -.893 deg,	R =    15.783 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.200  mm
+};
+P[84]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   403.681  mm,	Y =   133.721  mm,	Z =    60.366  mm,
+	W =  -179.359 deg,	P =    -2.032 deg,	R =    15.791 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.200  mm
+};
+P[85]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   403.679  mm,	Y =   133.720  mm,	Z =    79.661  mm,
+	W =  -179.359 deg,	P =    -2.032 deg,	R =    15.791 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.200  mm
+};
+P[86]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   460.138  mm,	Y =   149.077  mm,	Z =    63.670  mm,
+	W =  -179.359 deg,	P =    -2.033 deg,	R =    15.791 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.198  mm
+};
+P[87]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   460.139  mm,	Y =   149.077  mm,	Z =    79.799  mm,
+	W =  -179.359 deg,	P =    -2.033 deg,	R =    15.791 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.198  mm
+};
+P[88]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   521.192  mm,	Y =   170.197  mm,	Z =    65.592  mm,
+	W =  -179.359 deg,	P =    -2.033 deg,	R =    15.791 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.198  mm
+};
+P[89]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   521.192  mm,	Y =   170.198  mm,	Z =    77.592  mm,
+	W =  -179.359 deg,	P =    -2.033 deg,	R =    15.791 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.198  mm
+};
+P[90]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   544.156  mm,	Y =   202.156  mm,	Z =    70.396  mm,
+	W =  -178.432 deg,	P =    -2.296 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    18.280  mm
+};
+P[91]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   544.156  mm,	Y =   202.156  mm,	Z =    85.396  mm,
+	W =  -178.432 deg,	P =    -2.296 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.200  mm
+};
+P[92]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   572.014  mm,	Y =   202.150  mm,	Z =    71.131  mm,
+	W =  -178.433 deg,	P =    -2.297 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    21.201  mm
+};
+P[93]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   572.014  mm,	Y =   202.150  mm,	Z =    82.076  mm,
+	W =  -178.433 deg,	P =    -2.297 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    21.201  mm
+};
+P[94]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   620.493  mm,	Y =   223.174  mm,	Z =    73.340  mm,
+	W =  -178.433 deg,	P =    -2.297 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    17.951  mm
+};
+P[95]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   644.718  mm,	Y =   227.785  mm,	Z =    94.361  mm,
+	W =  -178.433 deg,	P =    -2.298 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    68.868  mm
+};
+P[96]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   642.799  mm,	Y =   292.680  mm,	Z =    88.314  mm,
+	W =  -178.433 deg,	P =    -2.298 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    68.868  mm
+};
+P[97]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   643.186  mm,	Y =   297.284  mm,	Z =    74.875  mm,
+	W =  -178.433 deg,	P =    -2.298 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    27.535  mm
+};
+P[98]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   642.799  mm,	Y =   292.680  mm,	Z =    88.314  mm,
+	W =  -178.433 deg,	P =    -2.298 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    68.868  mm
+};
+P[99]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   688.624  mm,	Y =   311.085  mm,	Z =    90.975  mm,
+	W =  -178.434 deg,	P =    -2.299 deg,	R =     1.381 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    54.100  mm
+};
+P[100]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   546.047  mm,	Y =   247.643  mm,	Z =   141.429  mm,
+	W =  -178.465 deg,	P =    -2.242 deg,	R =     9.209 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   102.924  mm
+};
+P[101]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   564.331  mm,	Y =   132.911  mm,	Z =   136.628  mm,
+	W =  -178.433 deg,	P =    -2.298 deg,	R =    -5.446 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   104.533  mm
+};
+P[102]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   581.632  mm,	Y =   132.897  mm,	Z =    69.958  mm,
+	W =  -178.433 deg,	P =    -2.299 deg,	R =    -5.445 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    15.198  mm
+};
+P[103]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   537.856  mm,	Y =   135.586  mm,	Z =    68.806  mm,
+	W =  -178.433 deg,	P =    -2.299 deg,	R =    -5.445 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    16.198  mm
+};
+P[104]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   482.370  mm,	Y =   139.810  mm,	Z =    65.542  mm,
+	W =  -178.433 deg,	P =    -2.299 deg,	R =    -5.445 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    16.198  mm
+};
+P[105]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   401.731  mm,	Y =   144.995  mm,	Z =    62.854  mm,
+	W =  -178.433 deg,	P =    -2.299 deg,	R =    -5.445 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    14.531  mm
+};
+P[106]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   401.731  mm,	Y =   144.995  mm,	Z =    76.390  mm,
+	W =  -178.433 deg,	P =    -2.299 deg,	R =    -5.445 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    42.364  mm
+};
+P[107]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   360.836  mm,	Y =   150.179  mm,	Z =    61.511  mm,
+	W =  -178.433 deg,	P =    -2.299 deg,	R =    -5.445 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    17.281  mm
+};
+P[108]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   311.623  mm,	Y =   152.484  mm,	Z =    59.299  mm,
+	W =  -178.434 deg,	P =    -2.301 deg,	R =    -5.445 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    16.027  mm
+};
+P[109]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   286.857  mm,	Y =   156.996  mm,	Z =    58.435  mm,
+	W =  -178.434 deg,	P =    -2.301 deg,	R =    -5.445 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    16.027  mm
+};
+P[110]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   287.677  mm,	Y =   216.955  mm,	Z =    60.163  mm,
+	W =  -178.434 deg,	P =    -2.301 deg,	R =    -5.664 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=     7.693  mm
+};
+P[111]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   279.671  mm,	Y =   284.232  mm,	Z =    62.421  mm,
+	W =  -178.434 deg,	P =    -2.302 deg,	R =    -2.588 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    13.192  mm
+};
+P[112]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   314.038  mm,	Y =   284.232  mm,	Z =    84.525  mm,
+	W =  -178.434 deg,	P =    -2.302 deg,	R =    -2.588 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    72.533  mm
+};
+P[113]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   582.635  mm,	Y =   242.376  mm,	Z =   150.191  mm,
+	W =  -178.434 deg,	P =    -2.302 deg,	R =    -2.588 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   129.033  mm
+};
+P[114]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   877.919  mm,	Y =   191.687  mm,	Z =   150.191  mm,
+	W =  -178.434 deg,	P =    -2.302 deg,	R =    -4.556 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   129.033  mm
+};
+P[115]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =  1059.125  mm,	Y =    68.514  mm,	Z =   150.191  mm,
+	W =  -178.434 deg,	P =    -2.302 deg,	R =   -13.351 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   129.033  mm
+};
+P[116]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1413.484  mm,	Y =   -37.042  mm,	Z =   150.191  mm,
+	W =  -178.434 deg,	P =    -2.302 deg,	R =   -39.010 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   129.032  mm
+};
+P[117]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1521.637  mm,	Y =  -219.437  mm,	Z =   150.191  mm,
+	W =  -178.434 deg,	P =    -2.302 deg,	R =   -54.775 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   129.032  mm
+};
+P[118]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1536.410  mm,	Y =  -342.199  mm,	Z =   150.192  mm,
+	W =  -178.434 deg,	P =    -2.302 deg,	R =   -74.045 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   129.032  mm
+};
+P[119]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1389.675  mm,	Y =   -76.062  mm,	Z =   150.162  mm,
+	W =  -178.433 deg,	P =    -2.303 deg,	R =   -68.547 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   129.032  mm
+};
+P[120]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1383.247  mm,	Y =   -57.921  mm,	Z =   101.107  mm,
+	W =  -178.433 deg,	P =    -2.303 deg,	R =   -68.547 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    15.282  mm
+};
+P[121]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1383.247  mm,	Y =   -57.921  mm,	Z =   116.107  mm,
+	W =  -178.433 deg,	P =    -2.303 deg,	R =   -68.547 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    50.533  mm
+};
+P[122]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1411.470  mm,	Y =     8.316  mm,	Z =   116.107  mm,
+	W =  -178.433 deg,	P =    -2.303 deg,	R =   -68.548 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    50.533  mm
+};
+P[123]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1412.793  mm,	Y =    21.290  mm,	Z =    77.810  mm,
+	W =  -178.984 deg,	P =    -1.301 deg,	R =   -68.536 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    21.450  mm
+};
+P[124]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1412.793  mm,	Y =    21.289  mm,	Z =    99.146  mm,
+	W =  -178.984 deg,	P =    -1.301 deg,	R =   -68.536 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    33.700  mm
+};
+P[125]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1458.872  mm,	Y =    33.960  mm,	Z =    99.146  mm,
+	W =  -178.984 deg,	P =    -1.302 deg,	R =   -68.536 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    33.700  mm
+};
+P[126]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1456.864  mm,	Y =    41.462  mm,	Z =    46.333  mm,
+	W =   179.657 deg,	P =     -.214 deg,	R =   -68.526 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    22.700  mm
+};
+P[127]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1458.442  mm,	Y =     -.977  mm,	Z =   109.454  mm,
+	W =  -179.302 deg,	P =    -1.048 deg,	R =   -68.531 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    96.842  mm
+};
+P[128]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1663.972  mm,	Y =     -.977  mm,	Z =   109.454  mm,
+	W =  -179.302 deg,	P =    -1.048 deg,	R =   -68.531 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    96.842  mm
+};
+P[129]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   288.455  mm,	Y =    18.802  mm,	Z =  1223.534  mm,
+	W =   -91.249 deg,	P =     -.744 deg,	R =    56.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    13.740  mm
+};
+P[130]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   274.248  mm,	Y =    40.113  mm,	Z =  1352.370  mm,
+	W =   -91.249 deg,	P =     -.744 deg,	R =    56.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   186.740  mm
+};
+P[131]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   427.265  mm,	Y =    -2.128  mm,	Z =  1352.370  mm,
+	W =   -91.249 deg,	P =     -.744 deg,	R =    56.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   186.740  mm
+};
+P[132]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   517.783  mm,	Y =  -319.889  mm,	Z =  1421.175  mm,
+	W =   -96.726 deg,	P =    -4.417 deg,	R =    56.283 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   186.740  mm
+};
+P[133]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   920.189  mm,	Y =   268.284  mm,	Z =  1368.126  mm,
+	W =  -117.123 deg,	P =    24.868 deg,	R =    16.207 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   154.536  mm
+};
+P[134]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1411.912  mm,	Y =   205.806  mm,	Z =   969.245  mm,
+	W =  -155.469 deg,	P =    25.170 deg,	R =   -29.540 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   126.456  mm
+};
+P[135]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =  1586.012  mm,	Y =    62.973  mm,	Z =   438.377  mm,
+	W =  -173.056 deg,	P =    11.526 deg,	R =   -52.587 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   109.155  mm
+};
+P[136:""]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   274.248  mm,	Y =    40.113  mm,	Z =  1352.370  mm,
+	W =   -91.249 deg,	P =     -.744 deg,	R =    56.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   186.740  mm
+};
+P[137]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   427.265  mm,	Y =    -2.128  mm,	Z =  1352.371  mm,
+	W =   -91.249 deg,	P =     -.744 deg,	R =    56.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   186.740  mm
+};
+P[138]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =    93.038  mm,	Y =  -432.140  mm,	Z =  1336.388  mm,
+	W =   -91.147 deg,	P =     -.809 deg,	R =    48.039 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   186.740  mm
+};
+P[139]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   -81.179  mm,	Y =  -358.092  mm,	Z =  1334.818  mm,
+	W =   -91.147 deg,	P =     -.808 deg,	R =    48.039 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   186.740  mm
+};
+P[141]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =     -.371  mm,	Y =  -373.628  mm,	Z =  1204.740  mm,
+	W =   -89.400 deg,	P =    -1.737 deg,	R =    48.014 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    26.367  mm
+};
+P[142]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =    -6.994  mm,	Y =  -390.330  mm,	Z =  1232.893  mm,
+	W =   -89.400 deg,	P =    -1.737 deg,	R =    48.014 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    47.533  mm
+};
+P[143]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   -80.910  mm,	Y =  -430.073  mm,	Z =  1232.894  mm,
+	W =   -89.400 deg,	P =    -1.737 deg,	R =    48.014 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    47.533  mm
+};
+P[145]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   -81.664  mm,	Y =  -415.347  mm,	Z =  1212.033  mm,
+	W =   -90.248 deg,	P =     -.805 deg,	R =    48.035 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    16.026  mm
+};
+P[146]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   -76.475  mm,	Y =  -404.989  mm,	Z =  1343.665  mm,
+	W =   -90.250 deg,	P =     -.806 deg,	R =    48.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   210.000  mm
+};
+P[147]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =    88.842  mm,	Y =  -458.559  mm,	Z =  1343.667  mm,
+	W =   -90.250 deg,	P =     -.806 deg,	R =    48.036 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   210.000  mm
+};
+P[155]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, -1',
+	X =   231.900  mm,	Y =  -511.192  mm,	Z =  1728.894  mm,
+	W =   -94.693 deg,	P =    -4.783 deg,	R =    48.253 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   128.500  mm
+};
+P[156]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   542.422  mm,	Y =  -588.583  mm,	Z =  1926.394  mm,
+	W =  -106.958 deg,	P =   -34.091 deg,	R =    52.928 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   103.118  mm
+};
+P[157]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   622.639  mm,	Y =  -771.684  mm,	Z =  2241.902  mm,
+	W =  -114.663 deg,	P =   -50.468 deg,	R =    74.689 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    86.104  mm
+};
+P[158]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   618.678  mm,	Y =   286.094  mm,	Z =   145.490  mm,
+	W =  -178.444 deg,	P =    -2.278 deg,	R =    13.902 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=   104.062  mm
+};
+P[159]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   631.668  mm,	Y =   347.682  mm,	Z =   101.179  mm,
+	W =  -178.433 deg,	P =    -2.298 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    51.035  mm
+};
+P[160]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   631.668  mm,	Y =   347.682  mm,	Z =   101.179  mm,
+	W =  -178.433 deg,	P =    -2.298 deg,	R =    15.756 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    51.035  mm
+};
+P[161]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   631.682  mm,	Y =   347.670  mm,	Z =    76.370  mm,
+	W =  -178.434 deg,	P =    -2.298 deg,	R =    15.757 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    24.866  mm
+};
+P[162]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   688.624  mm,	Y =   311.085  mm,	Z =    77.806  mm,
+	W =  -178.434 deg,	P =    -2.299 deg,	R =     1.381 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    20.536  mm
+};
+P[163]{
+   GP1:
+	UF : 1, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   694.960  mm,	Y =   352.555  mm,	Z =   111.109  mm,
+	W =  -178.434 deg,	P =    -2.299 deg,	R =     1.381 deg
+   GP2:
+	UF : 1, UT : 1,	
+	J1=    55.286  mm
+};
+/END

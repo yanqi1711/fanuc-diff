@@ -1,0 +1,41 @@
+</pre><table width=100%>
+<style>
+table {
+  border-collapse:collapse;
+}
+tr td
+{
+  border-bottom: 2px solid black;
+}
+  .btnTitle {
+    font-size: large;
+    color: black;
+    text-align: left;
+   }
+  .btnTitleGray {
+    font-size: large;
+    color: #d3d3d3;
+    text-align: left;
+   }
+  .btnDesc {
+    font-size: small;
+    color: black;
+    text-align: left;
+  }
+  .btnDescGray {
+    font-size: small;
+    color: #d3d3d3;
+    text-align: left;
+  }
+</style>
+<tr>
+<td><img src='/frh/gui/warn_white.png' width='41' height='41'></img></td>
+<td><div>
+<div class='btnTitle'>简易零点标定参考点未设置</div>
+<div class='btnDesc'>简易零点标定参考点未设置。为防范伺服-062 BZAL报警或伺服-065 BLAL报警，请进行参考点设置</div>
+</div></td>
+<td><div>
+<img src='/frh/gui/clear_icon.png' width='41' height='41' border='0' /></div>
+</td>
+</tr>
+<pre>

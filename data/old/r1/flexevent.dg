@@ -1,0 +1,41 @@
+Func       Date      Time    Tick       NavID              Text
+POWR  72 11-MAR-26 19:01:02  ee0b Power Cycle 
+KEY   72 11-MAR-26 19:01:24   cfe /wizard/guided/steps Initial Setup
+KEY   72 11-MAR-26 19:01:30  1814 /wizard/guided/steps Initial Setup
+EXIT  72 11-MAR-26 19:01:30  1815 68 1 
+POWR  72 11-MAR-26 19:06:02  3b1d þÖØÆôµçÔ´ 
+POWR  72 11-MAR-26 19:07:34  3b11 þÖØÆôµçÔ´ 
+KEY   72 11-MAR-26 19:07:38  41f0 /nav/core/tohome Ö÷Ò³
+KEY   72 11-MAR-26 21:57:34   d28 /nav/core/tohome Ö÷Ò³
+KEY   72 11-MAR-26 21:57:40  180d /nav/core/tohome Ö÷Ò³
+EXIT  72 11-MAR-26 21:57:40  180e 253 1 
+POWR  72 11-MAR-26 22:38:26  5fa4 þÖØÆôµçÔ´ 
+POWR  72 11-MAR-26 22:42:32  39bb þÖØÆôµçÔ´ 
+KEY   72 11-MAR-26 22:42:38  4221 /wizard/guided/steps ³õÊ¼ÉèÖÃÖ¸ÄÏ
+KEY   72 11-MAR-26 22:42:42  4a84 /wizard/guided/steps ³õÊ¼ÉèÖÃÖ¸ÄÏ
+EXIT  72 11-MAR-26 22:42:42  4a85 71 1 
+POWR  72 12-MAR-26 08:15:54  4c5b þÖØÆôµçÔ´ 
+POWR  72 12-MAR-26 10:38:26  3b19 þÖØÆôµçÔ´ 
+POWR  72 12-MAR-26 10:44:54  3b38 þÖØÆôµçÔ´ 
+KEY   72 12-MAR-26 10:44:56  3e8e /nav/core/tohome Ö÷Ò³
+KEY   72 12-MAR-26 10:44:58  4335 /nav/core/tohome Ö÷Ò³
+EXIT  72 12-MAR-26 10:44:58  4336 64 1 
+POWR  72 14-MAR-26 09:45:16  3b3c þÖØÆôµçÔ´ 
+KEY   72 14-MAR-26 09:45:18  3fd0 /nav/core/tohome Ö÷Ò³
+KEY   72 14-MAR-26 09:46:42  e3c9 /nav/core/tohome Ö÷Ò³
+EXIT  72 14-MAR-26 09:46:42  e3cb 71 1 
+POWR  72 14-MAR-26 10:41:44  49a4 þÖØÆôµçÔ´ 
+KEY   72 14-MAR-26 10:41:52  4cf6 /nav/core/tohome Ö÷Ò³
+KEY   72 14-MAR-26 10:59:28  5c06 /nav/core/tohome Ö÷Ò³
+EXIT  72 14-MAR-26 10:59:28  5c07 71 1 
+POWR  72 14-MAR-26 21:15:02  3b00 þÖØÆôµçÔ´ 
+KEY   72 14-MAR-26 21:15:06  3f89 /nav/core/tohome Ö÷Ò³
+KEY   72 14-MAR-26 21:15:56  a0d1 /nav/core/tohome Ö÷Ò³
+EXIT  72 14-MAR-26 21:15:56  a0d2 955 1 
+POWR  72 28-APR-26 01:49:22  5544 þÖØÆôµçÔ´ 
+POWR  72 30-MAY-26 22:01:50  5455 þÖØÆôµçÔ´ 
+POWR  72 04-JUN-26 15:53:48  3be6 þÖØÆôµçÔ´ 
+POWR  72 02-AUG-26 11:56:46  5988 þÖØÆôµçÔ´ 
+POWR  72 07-AUG-26 12:03:38  3b69 þÖØÆôµçÔ´ 
+POWR  72 07-AUG-26 12:14:12  3b90 þÖØÆôµçÔ´ 
+POWR  72 15-AUG-26 12:23:22  54e8 þÖØÆôµçÔ´ 

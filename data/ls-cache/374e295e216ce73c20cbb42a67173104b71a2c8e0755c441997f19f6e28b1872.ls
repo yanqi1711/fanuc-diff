@@ -1,0 +1,48 @@
+/PROG  STYLE54
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "ED55_Main";
+PROG_SIZE	= 568;
+CREATE		= DATE 26-03-18  TIME 21:18:12;
+MODIFIED	= DATE 26-03-18  TIME 21:18:38;
+FILE_NAME	= STYLE53;
+VERSION		= 0;
+LINE_COUNT	= 21;
+MEMORY_SIZE	= 912;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  TIMER[10]=RESET ;
+   2:  TIMER[10]=START ;
+   3:   ;
+   4:  WAIT GI[6:0:³ÌÐòºÅ]=54    ;
+   5:  GO[6:0:³ÌÐòºÅ]=(54) ;
+   6:   ;
+   7:  CALL SEGMENT(1) ;
+   8:  WAIT    .50(sec) ;
+   9:  CALL FINISHSEG(1) ;
+  10:   ;
+  11:   ;
+  12:   ;
+  13:  CALL ED44_54_OP150_PICK    ;
+  14:  CALL ED46_55_56_OP160_WELD    ;
+  15:  CALL ED44_54_OP170_DROP    ;
+  16:   ;
+  17:   ;
+  18:  CALL END_TASK    ;
+  19:  CALL MOVEHOME    ;
+  20:  TIMER[10]=STOP ;
+  21:  GO[6:0:³ÌÐòºÅ]=(0) ;
+/POS
+/END

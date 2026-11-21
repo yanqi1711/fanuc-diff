@@ -1,0 +1,41 @@
+/PROG  STYLE221
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "Service_Main";
+PROG_SIZE	= 430;
+CREATE		= DATE 24-08-11  TIME 11:18:00;
+MODIFIED	= DATE 26-03-25  TIME 12:06:38;
+FILE_NAME	= STYLE251;
+VERSION		= 0;
+LINE_COUNT	= 14;
+MEMORY_SIZE	= 770;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  TIMER[10]=RESET ;
+   2:  TIMER[10]=START ;
+   3:   ;
+   4:  WAIT GI[6:0:³ÌÐòºÅ]=221    ;
+   5:  R[6]=GI[6:0:³ÌÐòºÅ]    ;
+   6:  GO[6:0:³ÌÐòºÅ]=R[6] ;
+   7:   ;
+   8:J PR[1:HOME] 100% FINE    ;
+   9:   ;
+  10:  CALL SERVICE_GUN    ;
+  11:  CALL END_TASK    ;
+  12:  CALL MOVEHOME    ;
+  13:  TIMER[10]=STOP ;
+  14:   ;
+/POS
+/END

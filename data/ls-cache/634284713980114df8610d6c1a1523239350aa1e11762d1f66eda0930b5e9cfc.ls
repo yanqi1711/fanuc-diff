@@ -1,0 +1,156 @@
+/PROG  TIPDRESS_GUN
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "Tipdress_gun";
+PROG_SIZE	= 1633;
+CREATE		= DATE 26-03-13  TIME 12:13:36;
+MODIFIED	= DATE 26-03-18  TIME 16:58:00;
+FILE_NAME	= TIPCHANG;
+VERSION		= 0;
+LINE_COUNT	= 29;
+MEMORY_SIZE	= 1905;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  UFRAME_NUM=0 ;
+   2:  UTOOL_NUM=1 ;
+   3:  PAYLOAD[1:GUN] ;
+   4:   ;
+   5:  DO[201:OFF:Ç¹1ÐÞÄ¥ÖÐ]=ON ;
+   6:   ;
+   7:J PR[1:HOME] 100% CNT100    ;
+   8:J P[1] 100% CNT100    ;
+   9:J P[2] 100% CNT100    ;
+  10:J P[3] 100% CNT100    ;
+  11:   ;
+  12:J P[5] 100% CNT100    ;
+  13:   ;
+  14:L P[7] 2000mm/sec FINE    ;
+  15:  DO[257:OFF:µ¶Æ¬Ðý×ª]=PULSE,5.0sec ;
+  16:  !ÐÞÄ¥Î» ;
+  17:  WAIT DI[257:OFF]=ON+    ;
+  18:L P[6] 2000mm/sec FINE
+    :  TIPDRESS[SD=1,P=10,t=6.0,TD=1,ED=1]    ;
+  19:   ;
+  20:L P[8] 2000mm/sec FINE    ;
+  21:  DO[257:OFF:µ¶Æ¬Ðý×ª]=OFF ;
+  22:   ;
+  23:J P[9] 100% CNT100    ;
+  24:J P[10] 100% CNT100    ;
+  25:J P[11] 100% CNT100    ;
+  26:J P[12] 100% CNT100    ;
+  27:J PR[1:HOME] 100% FINE    ;
+  28:  CALL WR_UPD01(1,0) ;
+  29:  CALL TD_DRESS_END    ;
+/POS
+P[1]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   773.211  mm,	Y =  -808.507  mm,	Z =   441.142  mm,
+	W =   -18.282 deg,	P =    42.920 deg,	R =    19.294 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.247  mm
+};
+P[2]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   512.807  mm,	Y =  -715.567  mm,	Z =   406.846  mm,
+	W =    10.171 deg,	P =    68.588 deg,	R =   129.820 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.247  mm
+};
+P[3]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 1',
+	X =   512.804  mm,	Y =  -804.239  mm,	Z =    48.849  mm,
+	W =     7.142 deg,	P =    27.568 deg,	R =   171.207 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.246  mm
+};
+P[5]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 1',
+	X =   264.476  mm,	Y =  -899.880  mm,	Z =  -486.870  mm,
+	W =     -.883 deg,	P =     1.421 deg,	R =   170.931 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   145.743  mm
+};
+P[6]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 1',
+	X =   179.476  mm,	Y =  -899.876  mm,	Z =  -422.670  mm,
+	W =     -.831 deg,	P =     1.452 deg,	R =   172.991 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    42.743  mm
+};
+P[7]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 1',
+	X =   179.476  mm,	Y =  -899.879  mm,	Z =  -486.869  mm,
+	W =     -.843 deg,	P =     1.445 deg,	R =   172.515 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   145.743  mm
+};
+P[8]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 1',
+	X =   179.476  mm,	Y =  -899.879  mm,	Z =  -486.869  mm,
+	W =     -.843 deg,	P =     1.445 deg,	R =   172.515 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   145.743  mm
+};
+P[9]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 1',
+	X =   357.809  mm,	Y =  -899.881  mm,	Z =  -486.870  mm,
+	W =     -.898 deg,	P =     1.412 deg,	R =   170.297 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   145.743  mm
+};
+P[10]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 1',
+	X =   512.804  mm,	Y =  -804.239  mm,	Z =    48.849  mm,
+	W =     7.142 deg,	P =    27.568 deg,	R =   171.207 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.246  mm
+};
+P[11]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   512.807  mm,	Y =  -715.567  mm,	Z =   406.846  mm,
+	W =    10.171 deg,	P =    68.588 deg,	R =   129.820 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.246  mm
+};
+P[12]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   773.211  mm,	Y =  -808.507  mm,	Z =   441.142  mm,
+	W =   -18.283 deg,	P =    42.920 deg,	R =    19.294 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   214.246  mm
+};
+/END

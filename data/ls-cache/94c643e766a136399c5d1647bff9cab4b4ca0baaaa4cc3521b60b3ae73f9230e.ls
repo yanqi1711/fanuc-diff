@@ -1,0 +1,47 @@
+/PROG  STYLE11
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "ED44_OP110_ 首件";
+PROG_SIZE	= 530;
+CREATE		= DATE 26-03-20  TIME 18:18:28;
+MODIFIED	= DATE 26-03-20  TIME 18:18:28;
+FILE_NAME	= STYLE14;
+VERSION		= 0;
+LINE_COUNT	= 20;
+MEMORY_SIZE	= 870;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  TIMER[10]=RESET ;
+   2:  TIMER[10]=START ;
+   3:   ;
+   4:  WAIT GI[6:0:程序号]=11    ;
+   5:  GO[6:0:程序号]=(11) ;
+   6:   ;
+   7:  CALL SEGMENT(1) ;
+   8:  WAIT    .50(sec) ;
+   9:  CALL FINISHSEG(1) ;
+  10:   ;
+  11:   ;
+  12:   ;
+  13:  CALL G3G5_PICK_OP110    ;
+  14:  CALL G3G5_DROP_OP130    ;
+  15:   ;
+  16:   ;
+  17:  CALL END_TASK    ;
+  18:  CALL MOVEHOME    ;
+  19:  TIMER[10]=STOP ;
+  20:  GO[6:0:程序号]=(0) ;
+/POS
+/END

@@ -1,0 +1,27 @@
+GRIP
+PART
+LMNEDIT
+Pick
+Up Part
+b'hb
+Call
+s karel
+program
+for clos
+he valve
+specifi
+ed by z
+argum
+ents.  I
+t will a
+lso cX
+chkgrc
+amps or
+vacuu?m inpu
+number
+If no
+is given
+macr
+MHCHKAR
+MUAP
+LANGDR
