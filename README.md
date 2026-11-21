@@ -104,6 +104,17 @@ src/data/signals.ts       I/O、寄存器含义
 src/views/                总览 / 变更 / 机器人 / 程序 / 对比 / 跨机器人
 ```
 
+## 焊点重复分析
+
+最新备份（2026-11-21）中：
+
+- 507 个含 `SPOT` 的程序、1,302 条焊点指令。
+- **单个程序内部：0 组重复坐标**；同一个 P 也没有被多条 SPOT 重复使用。
+- **不同机器人之间：0 组重复坐标**。
+- 同一台机器人、不同焊接程序之间：310 组重复坐标、893 条焊点指令，主要是不同 `ED*_WELD` 方案共用点位表。
+
+完整报告：[docs/weld-duplicate-analysis.md](docs/weld-duplicate-analysis.md)；全部重复明细：[docs/weld-duplicates.csv](docs/weld-duplicates.csv)。
+
 ## 说明
 
 - 原始备份字节保持不变；差异来自内容哈希或解码后的文本比较。
