@@ -81,17 +81,17 @@ const sample = [
       <section class="relative slide-enter-content">
         <span class="bg-title font-mono">FLEET</span>
         <p class="text-xs op-50 font-mono">
-          data/old → data/new · FANUC V9.40P · 12 台机器人
+          data/7 → data/11.21 · FANUC V9.40P · {{ data.totals.robots }} 台机器人
         </p>
         <h1 class="text-4xl sm:text-6xl font-800 mt-2 mb-0 tracking-tight leading-[1.05]">
-          十二台机器人<br class="sm:hidden">，两次备份
+          {{ data.totals.robots }} 台机器人<br class="sm:hidden">，两次备份
         </h1>
         <div class="prose mt-6">
           <p>
             从 <strong>{{ dateLabel(data.old.date) }}</strong> 到 <strong>{{ dateLabel(data.new.date) }}</strong>，
-            十二台 FANUC 点焊 / 搬运机器人的控制器备份被完整保留下来。
+            FANUC 点焊 / 搬运机器人的控制器备份被完整保留下来。
             这里把二进制 <code>.tp</code> 程序反编译成可读的 <code>.ls</code>，
-            再逐行合并、着色、翻译，让两个月里每一个<strong>改动的指令</strong>都能被看见。
+            再逐行合并、着色、翻译，让两次备份之间每一个<strong>改动的指令</strong>都能被看见。
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-3 mt-7">
@@ -130,7 +130,7 @@ const sample = [
           </div>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
           <RouterLink
             v-for="(r, i) in data.robots"
             :key="r.id"
@@ -153,10 +153,14 @@ const sample = [
 
             <div class="flex items-end justify-between mt-5">
               <div>
-                <span class="text-4xl font-650 font-mono tnum">{{ r.stats.changed }}</span>
-                <span class="text-xs op-50 ml-1.5">个文件变更</span>
+                <div class="text-4xl font-650 font-mono tnum leading-none">
+                  {{ r.stats.changed }}
+                </div>
+                <div class="text-xs op-50 mt-1">
+                  个文件变更
+                </div>
               </div>
-              <span class="text-[11px] op-35 font-mono text-right leading-4">
+              <span class="text-[11px] op-35 font-mono text-right leading-4 whitespace-nowrap">
                 {{ r.old.date }}<br>→ {{ r.new.date }}
               </span>
             </div>
@@ -291,7 +295,7 @@ const sample = [
               原始备份
             </div>
             <div class="text-xs op-50 mt-1 leading-5">
-              1,398 个 <code>.tp</code> 二进制程序，按内容哈希去重后为 392 个唯一程序。
+              两次备份的全部 <code>.tp</code> 二进制程序，按内容哈希去重后转译。
             </div>
           </div>
           <div class="border border-base rounded-lg p-4">

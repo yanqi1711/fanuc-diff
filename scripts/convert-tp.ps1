@@ -1,4 +1,4 @@
-# Convert every unique FANUC .tp binary program in data/old + data/new to ASCII .ls
+# Convert every unique FANUC .tp binary program in the July and November backups
 # using Roboguide's WinOLPC printtp.exe. Results are cached by SHA-256 of the .tp
 # file, so identical programs (the same file on many robots) are only converted once.
 #
@@ -43,7 +43,7 @@ function Get-Sha256([string]$Path) {
 # names/metadata, but the binary is identical either way.
 $seen = @{}
 $jobs = New-Object System.Collections.Generic.List[object]
-foreach ($date in @('new', 'old')) {
+foreach ($date in @('11.21', '7')) {
   $root = Join-Path $DataDir $date
   if (-not (Test-Path -LiteralPath $root)) { continue }
   Get-ChildItem -LiteralPath $root -Recurse -File -Filter *.tp | ForEach-Object {

@@ -1,0 +1,86 @@
+History for type 1 par 0
+History for type 1 par 1
+History for type 1 par 2
+History for type 1 par 3
+History for type 0 par 0
+History for type 0 par 1
+History for type 0 par 2
+History for type 0 par 3
+History for type 2 par 0
+History for type 2 par 1
+History for type 2 par 2
+History for type 2 par 3
+History for type 3 par 0
+** HD **
+** Register dump **
+ERR:0 SUB:0 TSK:0 TIM:26-MAR-20 20:46.54
+** POFF **
+ PC:103c2ac4  TB:000000066fd47ad9
+** ETCECC **
+ALM:00000000 EC1:00000000 EC2:00000000 EC3:0f01006d EC4:01000031
+** ETC **
+ALM:00000000 ALA:513c8440 ALM:00000000 AID:13011072
+** END **
+ TB:000000066fd85b82
+ All:7623.706237us PWFMEM:331.173312us SHADOW:7292.532925us
+** END **
+History for type 3 par 1
+** HD **
+** Register dump **
+ERR:0 SUB:0 TSK:0 TIM:26-MAR-21 09:09.28
+** POFF **
+ PC:103c2ac4  TB:00000159c1d0c94d
+** ETCECC **
+ALM:00000000 EC1:00000000 EC2:00000000 EC3:0f01006d EC4:01000031
+** ETC **
+ALM:00000000 ALA:523c8440 ALM:00000000 AID:13011072
+** END **
+ TB:00000159c1d60d6b
+ All:10353.643536us PWFMEM:331.083311us SHADOW:10022.560226us
+** END **
+History for type 3 par 2
+** HD **
+** Register dump **
+ERR:0 SUB:0 TSK:0 TIM:26-APR-28 01:47.52
+** POFF **
+ PC:103c2d60  TB:000062b6425fc149
+** ETCECC **
+ALM:00000000 EC1:00000000 EC2:00000000 EC3:0f01006d EC4:01000031
+** ETC **
+ALM:00000000 ALA:533c8440 ALM:00000000 AID:13011072
+** END **
+ TB:000062b64265bd45
+ All:11765.757658us PWFMEM:331.293313us SHADOW:11434.464345us
+** END **
+History for type 3 par 3
+** HD **
+** Register dump **
+ERR:0 SUB:0 TSK:0 TIM:26-MAY-29 09:59.26
+** POFF **
+ PC:103c2ac8  TB:0000521812e9a3c0
+** ETCECC **
+ALM:00000000 EC1:00000000 EC2:00000000 EC3:0f01006d EC4:01000031
+** ETC **
+ALM:00000000 ALA:543c8440 ALM:00000000 AID:13011072
+** END **
+ TB:0000521812ef97f9
+ All:11706.147061us PWFMEM:331.113311us SHADOW:11375.033750us
+** END **
+History for type 3 par 4
+** HD **
+** Register dump **
+ERR:0 SUB:0 TSK:0 TIM:26-JUN-04 15:32.00
+** POFF **
+ PC:103c2ac4  TB:00000c6403fbbc06
+** ETCECC **
+ALM:00000000 EC1:00000000 EC2:00000000 EC3:0f01006d EC4:01000031
+** ETC **
+ALM:00000000 ALA:55688440 ALM:00000000 AID:13011072
+** END **
+ TB:00000c6403ffed2f
+ All:8241.952420us PWFMEM:332.823328us SHADOW:7909.129091us
+** END **
+History for type 6 par 0
+History for type 6 par 1
+History for type 6 par 2
+History for type 6 par 3

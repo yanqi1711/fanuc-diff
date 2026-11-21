@@ -160,7 +160,7 @@ function topFor(p: ProgramEntry) {
         <div class="grid sm:grid-cols-2 gap-3 mt-7">
           <div class="border border-base rounded-xl p-4">
             <div class="flex items-center justify-between">
-              <span class="mono-label">备份 A · old</span>
+              <span class="mono-label">备份 A · {{ robot.old.date }}</span>
               <span class="text-xs font-mono op-40">{{ robot.old.version }}</span>
             </div>
             <div class="text-2xl font-650 font-mono mt-1">
@@ -178,7 +178,7 @@ function topFor(p: ProgramEntry) {
               +{{ Math.max(0, robot.new.bytes - robot.old.bytes) }} B
             </div>
             <div class="flex items-center justify-between">
-              <span class="mono-label">备份 B · new</span>
+              <span class="mono-label">备份 B · {{ robot.new.date }}</span>
               <span class="text-xs font-mono op-40">{{ robot.new.version }}</span>
             </div>
             <div class="text-2xl font-650 font-mono mt-1">

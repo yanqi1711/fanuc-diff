@@ -13,7 +13,7 @@ const error = ref('')
 const query = ref('')
 const robotFilter = ref(String(route.query.robot ?? 'all'))
 const initialType = String(route.query.type ?? '')
-const typeFilter = ref<'all' | 'program' | 'config' | 'log'>(initialType === 'all' || initialType === 'config' || initialType === 'log' ? initialType : 'program')
+const typeFilter = ref<'all' | 'program' | 'config' | 'log'>(initialType === 'program' || initialType === 'config' || initialType === 'log' ? initialType : 'all')
 const statusFilter = ref<'all' | 'logic' | 'position' | 'comment' | 'config'>('all')
 
 watch(typeFilter, (v) => {
@@ -105,7 +105,7 @@ function open(c: ChangeEntry) {
     <section class="relative slide-enter-content">
       <span class="bg-title font-mono">DIFF</span>
       <p class="text-xs op-50 font-mono">
-        {{ index ? `${dateLabel(index.old.date)} → ${dateLabel(index.new.date)}` : '两次备份' }} · 12 台机器人
+        {{ index ? `${dateLabel(index.old.date)} → ${dateLabel(index.new.date)}` : '两次备份' }} · {{ index?.totals.robots ?? 10 }} 台机器人
       </p>
       <h1 class="text-4xl sm:text-5xl font-800 mt-2 mb-0 tracking-tight">
         全部变更
@@ -116,8 +116,9 @@ function open(c: ChangeEntry) {
           配置与日志文件按 GB18030 解码后逐行比较。二进制配置的“变更”只代表内容不同，具体字段需要回控制器确认。
         </p>
         <p class="text-xs not-prose op-45">
-          默认只列出 <strong>{{ counts.program }}</strong> 个程序文件变更；另有 {{ counts.config }} 个配置 / 日志文件，切换上方类型即可查看。
-          <button class="underline hover:op-80" @click="typeFilter = 'all'">查看全部 {{ counts.total }} 项</button>
+          当前区间共 <strong>{{ counts.total }}</strong> 项：程序 {{ counts.program }} · 配置 / 日志 {{ counts.config }}。
+          <button v-if="typeFilter !== 'all'" class="underline hover:op-80" @click="typeFilter = 'all'">查看全部 {{ counts.total }} 项</button>
+          <button v-else-if="counts.program" class="underline hover:op-80" @click="typeFilter = 'program'">只看 {{ counts.program }} 个程序变更</button>
         </p>
       </div>
     </section>
@@ -250,7 +251,7 @@ function open(c: ChangeEntry) {
                   <span v-else class="st-chg">±{{ c.change.add }} 行</span>
                 </span>
               </div>
-              <div class="hidden sm:block text-right font-mono tnum op-45">
+              <div class="hidden sm:block text-right font-mono tnum op-45 whitespace-nowrap">
                 {{ fmtSize(c.oldSize) }}<span class="op-25"> → </span>{{ fmtSize(c.newSize) }}
               </div>
               <div class="hidden sm:block text-right">

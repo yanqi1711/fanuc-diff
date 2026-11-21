@@ -1,0 +1,88 @@
+Func       Date      Time    Tick       NavID              Text
+POWR  72 28-FEB-26 13:40:08  ce3e Power Cycle 
+KEY   72 28-FEB-26 13:40:30  eb7c /wizard/guided/steps Initial Setup
+KEY   72 28-FEB-26 13:40:38  fb58 /wizard/guided/steps Initial Setup
+EXIT  72 28-FEB-26 13:40:38  fb59 1631 3 
+KEY   72 28-FEB-26 13:40:38  fc76 /nav/core/tohome HOME
+KEY   72 28-FEB-26 13:40:38  fcd2 /nav/core/tohome HOME
+KEY   72 28-FEB-26 13:40:44   77b /nav/core/tohome HOME
+EXIT  72 28-FEB-26 13:40:44   77c 70 1 
+POWR  72 08-MAR-26 20:41:04  3704 Power Cycle 
+POWR  72 09-MAR-26 20:21:26  3702 Power Cycle 
+POWR  72 09-MAR-26 20:23:50  5832 þÖØÆôµçÔ´ 
+POWR  72 09-MAR-26 20:30:38  387a þÖØÆôµçÔ´ 
+KEY   72 09-MAR-26 20:30:42  3dfd /wizard/guided/steps ³õÊ¼ÉèÖÃÖ¸ÄÏ
+KEY   72 09-MAR-26 20:30:50  4cee /wizard/guided/steps ³õÊ¼ÉèÖÃÖ¸ÄÏ
+EXIT  72 09-MAR-26 20:30:50  4cef 18 1 
+POWR  72 09-MAR-26 20:32:18  3596 þÖØÆôµçÔ´ 
+POWR  72 09-MAR-26 20:33:44  577d þÖØÆôµçÔ´ 
+POWR  72 09-MAR-26 20:51:32  389f þÖØÆôµçÔ´ 
+KEY   72 09-MAR-26 20:51:36  3e6a /wizard/guided/steps ³õÊ¼ÉèÖÃÖ¸ÄÏ
+KEY   72 09-MAR-26 21:08:40   e7b /wizard/guided/steps ³õÊ¼ÉèÖÃÖ¸ÄÏ
+EXIT  72 09-MAR-26 21:08:40   e7c 35 1 
+POWR  72 09-MAR-26 21:10:24  35db þÖØÆôµçÔ´ 
+POWR  72 13-MAR-26 19:59:42  35af þÖØÆôµçÔ´ 
+POWR  72 13-MAR-26 20:01:44  3600 þÖØÆôµçÔ´ 
+KEY   72 13-MAR-26 20:01:50  3c78 /nav/core/tohome Ö÷Ò³
+KEY   72 13-MAR-26 20:03:56  3628 /nav/core/tohome Ö÷Ò³
+EXIT  72 13-MAR-26 20:03:56  3629 33 1 
+POWR  72 20-MAR-26 21:07:50  35e1 þÖØÆôµçÔ´ 
+POWR  72 21-MAR-26 15:43:18  3618 þÖØÆôµçÔ´ 
+POWR  72 28-MAR-26 15:23:18  3628 þÖØÆôµçÔ´ 
+POWR  72 29-MAR-26 10:04:50  35fe þÖØÆôµçÔ´ 
+KEY   72 29-MAR-26 10:04:52  38a8 /nav/core/tohome Ö÷Ò³
+KEY   72 29-MAR-26 10:37:26  20f9 /nav/core/tohome Ö÷Ò³
+EXIT  72 29-MAR-26 10:37:26  20fa 1859 2 
+POWR  72 29-MAR-26 10:39:22  3657 þÖØÆôµçÔ´ 
+POWR  72 29-MAR-26 10:55:18  360e þÖØÆôµçÔ´ 
+POWR  72 29-MAR-26 11:02:20  3616 þÖØÆôµçÔ´ 
+POWR  72 29-MAR-26 11:06:54  3645 þÖØÆôµçÔ´ 
+POWR  72 29-MAR-26 11:08:48  35e6 þÖØÆôµçÔ´ 
+POWR  72 29-MAR-26 11:32:00  3682 þÖØÆôµçÔ´ 
+KEY   72 29-MAR-26 11:32:02  393e /nav/core/tohome Ö÷Ò³
+KEY   72 29-MAR-26 11:32:12  4e54 /nav/core/tohome Ö÷Ò³
+EXIT  72 29-MAR-26 11:32:12  4e55 98 1 
+POWR  72 29-MAR-26 11:33:22  3653 þÖØÆôµçÔ´ 
+KEY   72 29-MAR-26 11:33:26  38ff /nav/core/tohome Ö÷Ò³
+KEY   72 29-MAR-26 11:35:04  f9c4 /nav/core/tohome Ö÷Ò³
+EXIT  72 29-MAR-26 11:35:04  f9c5 64 1 
+POWR  72 29-MAR-26 11:36:58  3692 þÖØÆôµçÔ´ 
+POWR  72 29-MAR-26 11:41:22  36b6 þÖØÆôµçÔ´ 
+KEY   72 29-MAR-26 11:41:24  3975 /nav/core/tohome Ö÷Ò³
+KEY   72 29-MAR-26 11:42:12  9941 /nav/core/tohome Ö÷Ò³
+EXIT  72 29-MAR-26 11:42:12  9942 64 1 
+POWR  72 29-MAR-26 11:43:40  36a0 þÖØÆôµçÔ´ 
+KEY   72 29-MAR-26 11:43:42  3951 /nav/core/tohome Ö÷Ò³
+KEY   72 29-MAR-26 11:43:52  4b15 /nav/core/tohome Ö÷Ò³
+EXIT  72 29-MAR-26 11:43:52  4b16 64 1 
+POWR  72 29-MAR-26 11:55:02  367b þÖØÆôµçÔ´ 
+POWR  72 29-MAR-26 21:51:40  36ba þÖØÆôµçÔ´ 
+POWR  72 30-MAR-26 00:08:48  47dc þÖØÆôµçÔ´ 
+POWR  72 30-MAR-26 11:44:54  35ff þÖØÆôµçÔ´ 
+POWR  72 30-MAR-26 11:46:50  35b8 þÖØÆôµçÔ´ 
+POWR  72 31-MAR-26 20:39:38  3649 þÖØÆôµçÔ´ 
+POWR  72 31-MAR-26 20:57:54  37a4 þÖØÆôµçÔ´ 
+KEY   72 31-MAR-26 20:57:56  3a5b /nav/core/tohome Ö÷Ò³
+KEY   72 31-MAR-26 20:57:58  3e13 /nav/core/tohome Ö÷Ò³
+EXIT  72 31-MAR-26 20:57:58  3e14 71 1 
+POWR  72 31-MAR-26 21:05:50  3631 þÖØÆôµçÔ´ 
+POWR  72 31-MAR-26 21:12:30  3624 þÖØÆôµçÔ´ 
+POWR  72 31-MAR-26 21:17:42  3620 þÖØÆôµçÔ´ 
+KEY   72 31-MAR-26 21:17:44  38d4 /nav/core/tohome Ö÷Ò³
+KEY   72 31-MAR-26 21:17:46  3c74 /nav/core/tohome Ö÷Ò³
+EXIT  72 31-MAR-26 21:17:46  3c75 955 1 
+POWR  72 13-APR-26 16:25:32  5888 þÖØÆôµçÔ´ 
+POWR  72 13-APR-26 16:27:22  38e5 þÖØÆôµçÔ´ 
+KEY   72 13-APR-26 16:27:24  3b50 /wizard/guided/steps ³õÊ¼ÉèÖÃÖ¸ÄÏ
+KEY   72 13-APR-26 16:27:30  4869 /wizard/guided/steps ³õÊ¼ÉèÖÃÖ¸ÄÏ
+EXIT  72 13-APR-26 16:27:30  486a 1631 3 
+KEY   72 13-APR-26 16:27:30  496c /nav/core/tohome Ö÷Ò³
+KEY   72 13-APR-26 16:27:32  49e4 /nav/core/tohome Ö÷Ò³
+KEY   72 13-APR-26 16:31:52  48a2 /nav/core/tohome Ö÷Ò³
+KEY   72 13-APR-26 18:56:12  58b1 /nav/core/tohome Ö÷Ò³
+EXIT  72 13-APR-26 18:56:12  58b2 71 1 
+POWR  72 28-APR-26 01:47:00  418f þÖØÆôµçÔ´ 
+POWR  72 30-MAY-26 21:57:10  4121 þÖØÆôµçÔ´ 
+POWR  72 04-JUN-26 13:04:20  3636 þÖØÆôµçÔ´ 
+KEY   72 04-JUN-26 13:04:22  36bb /nav/core/tohome Ö÷Ò³
+EXIT  72 04-JUN-26 13:04:22  36bc 74 1 

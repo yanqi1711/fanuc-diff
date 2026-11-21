@@ -1,0 +1,104 @@
+F Number: YI96143
+VERSION : SpotTool+
+$VERSION: V9.40501      9/12/2025
+DATE:     21-NOV-26 23:48
+ETHERNET CONFIGURATION::
+$HOSTNAME   :ROBOT
+TMI_ROUTER  :ROUTER
+TMI_ETHERAD :00:e0:e4:c9:13:80
+Subnet mask :255.255.255.0
+Host Table [17]:      QUICC0 addr: 192.168.0.1
+Host Table [18]:      QUICC1
+Host Table [19]:      QUICC2
+Host Table [20]:      ROUTER
+Host Table [21]:       PCJOG addr:192.168.0.100
+Host Table [22]:      CAMPRT addr:192.168.1.10
+Host Table [23]:      CAMRTR addr:192.168.1.10
+Host Table [24]:Software Operator Panel addr:192.168.0.100
+Server [1]:         FTP state: 3
+Server [2]:         FTP state: 3
+ETHERNET STATISTICS:
+-Interrupt count:     1
+-RX count:            0
+-RX dequeue:          0
+-TX start:            2
+-TX count:            2
+-TX complete:         1
+-Busy count :         0
+-TX error count:      0
+-RX deliver:          0
+-RX length violation: 0
+-RX alignment error:  0
+-RX short frame:      0
+-RX crc error:        0
+-RX overrun:          0
+-RX collision:        0
+-TX wait:             0
+-TX defer:            0
+-TX late collision:   0
+-Retransmission limit:0
+-TX underrun:         0
+-TX carrier lost:     0
+-Full Duplex:         1
+-Speed Mbps:          100
+-Bucket Misses:       0
+-link:                DOWN
+-High network traffic:0
+-watermark:           0
+-max bds:             0
+-intr pkt defer:      0
+-min pps:             0
+-avg pps:             0
+-max pps:             0
+-TX start:            0
+-TX count:            0
+-TX complete:         0
+-intr pkt defer:      390
+Fusion Route Table
+Network              Gateway            Flags  Ref_count  Interface
+192.168.0.1          Direct Connect      1485      0       Quicc0
+224.0.0.1            Direct Connect      3485      0       Quicc0
+1.1.0.10             Direct Connect      1485     4140       necd
+192.168.1.10         Direct Connect      1485      0       qoriq
+0.0.0.0              192.168.1.10          c1      0       qoriq
+Fusion Socket Table
+ID  Prot  Local IP,port     Foreign IP,port      Sndwind    Rcvwnd    State
+1 UDP    127.0.0.1,49153     127.0.0.1,49152          0        0     CLOSED
+2 TCP    0.0.0.0,3080        0.0.0.0,0                0        0     LISTEN
+3 TCP    0.0.0.0,3002        0.0.0.0,0                0        0     LISTEN
+5 UDP    0.0.0.0,60004       0.0.0.0,0                0        0     CLOSED
+6 TCP    0.0.0.0,60011       0.0.0.0,0                0        0     LISTEN
+7 TCP    1.1.0.10,60011      1.1.0.11,49152       16904     8192     ESTAB
+18 TCP    1.1.0.10,49422      0.0.0.0,0                0        0     LISTEN
+19 UDP    0.0.0.0,49152       0.0.0.0,0                0        0     CLOSED
+20 TCP    0.0.0.0,23          0.0.0.0,0                0        0     LISTEN
+21 TCP    1.1.0.10,60014      0.0.0.0,0                0        0     LISTEN
+22 TCP    0.0.0.0,8080        0.0.0.0,0                0        0     LISTEN
+23 UDP    1.1.0.10,60012      0.0.0.0,0                0        0     CLOSED
+24 UDP    0.0.0.0,60007       0.0.0.0,0                0        0     CLOSED
+25 TCP    0.0.0.0,60005       0.0.0.0,0                0        0     LISTEN
+26 TCP    0.0.0.0,60009       0.0.0.0,0                0        0     LISTEN
+28 TCP    1.1.0.10,39942      1.1.0.11,60005       15984     8192     ESTAB
+29 TCP    1.1.0.10,3002       1.1.0.11,49164       16920     8192     ESTAB
+60 TCP    1.1.0.10,48135      1.1.0.11,21          16794     8192     ESTAB
+66 UDP    0.0.0.0,4840        127.0.0.1,4840           0        0     CLOSED
+67 TCP    0.0.0.0,4880        0.0.0.0,0                0        0     LISTEN
+68 TCP    0.0.0.0,0           0.0.0.0,0                0        0     CLOSED
+69 TCP    0.0.0.0,80          0.0.0.0,0                0        0     LISTEN
+70 TCP    0.0.0.0,21          0.0.0.0,0                0        0     LISTEN
+71 TCP    0.0.0.0,18245       0.0.0.0,0                0        0     LISTEN
+72 TCP    0.0.0.0,60008       0.0.0.0,0                0        0     LISTEN
+1 UDP    192.168.1.10,49414  255.255.255.255,3956     0        0     CLOSED
+Fusion Arp Table 1
+IP address            Ethernet address                Countdown
+1.1.0.11,2048          00 e0 e4 9c 4f 78                14
+Fusion Arp Table 2
+TCP/IP Heap
+Total: 1200000
+Avail: 805624
+Used : 394376
+Low water: 512
+Base @ 0x11699b78
+Avail: 1065552
+Used : 134448
+Base @ 0x1209800

@@ -1,9 +1,9 @@
 // Build the static data set for the FANUC backup diff site.
 //
 // Input
-//   data/old/r1..r12    backup at the earlier date
-//   data/new/r1..r12    backup at the later date
-//   data/ls-cache/*.ls  ASCII programs converted from .tp by printtp
+//   data/7/r1..r12       backup at 2026-07-05
+//   data/11.21/r1..r10   backup at 2026-11-21 (r3/r11 have no 11.21 backup)
+//   data/ls-cache/*.ls   ASCII programs converted from .tp by printtp
 //
 // Output
 //   public/data/index.json          site overview + robot summaries
@@ -28,6 +28,7 @@ const publicDir = join(root, 'public', 'data')
 const blobDir = join(publicDir, 'blob')
 
 const DATES = ['old', 'new']
+const BACKUP_DIRS = { old: '7', new: '11.21' }
 const ROBOT_IDS = Array.from({ length: 12 }, (_, i) => `r${i + 1}`)
 const TEXT_EXT = new Set(['.ls', '.xml', '.ini', '.txt', '.dat', '.stm'])
 const IMAGE_EXT = new Set(['.gif', '.png', '.jpg', '.jpeg'])
@@ -221,12 +222,12 @@ function backupDate(robotDir) {
   const m = raw.match(/^(\d{2})\/(\d{2})\/(\d{2})\s+(\d{2}:\d{2}:\d{2})/m)
   if (!m)
     return null
-  // FANUC writes YY/MM/DD: 26/09/05 = 2026-09-05
+  // FANUC writes YY/MM/DD: 26/07/05 = 2026-07-05
   return { date: `20${m[1]}-${m[2]}-${m[3]}`, time: m[4], version: raw.match(/Version:\s*(.+)/)?.[1]?.trim() }
 }
 
 function readBackup(robotId, date) {
-  const dir = join(dataDir, date, robotId)
+  const dir = join(dataDir, BACKUP_DIRS[date], robotId)
   if (!existsSync(dir))
     return null
   const files = []
@@ -530,7 +531,7 @@ mkdirSync(blobDir, { recursive: true })
 
 const robots = ROBOT_IDS.map(buildRobot).filter(Boolean)
 if (!robots.length)
-  throw new Error('No robot backups found under data/old and data/new')
+  throw new Error('No robot backups found under data/7 and data/11.21')
 
 for (const robot of robots) {
   mkdirSync(join(publicDir, 'robot'), { recursive: true })

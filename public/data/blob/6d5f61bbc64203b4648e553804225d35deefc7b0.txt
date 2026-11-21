@@ -1,6 +1,0 @@
-ERRACT.LS      Robot Name ROBOT 05-SEP-26 10:41:28  
-
-73954" 05-SEP-26 09:53:52 " SRVO-037 IMSTP输入(Group:2)                       " " SERVO                         00110110" 
-73955" 05-SEP-26 09:53:52 " SRVO-037 IMSTP输入(Group:1)                       " " SERVO                         00110110" 
-73956" 05-SEP-26 09:53:52 " SRVO-007 外部紧急停止                             " " SERVO                         00110110" 
-73957" 05-SEP-26 09:53:52 " SRVO-199 控制停止                                 " " STOP.G                        00100110" 

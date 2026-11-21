@@ -1,0 +1,141 @@
+*SYST
+V9.4
+0501
+12/2025
+SG_LOG
+ARR_T
+$CLK
+$MCH
+POS=
+TRQ=
+HPD^
+DTMA
+TATz
+ROR_CNT3
+XTRA_SHOORT1^
+wCFG0
+GUN_NUM_
+CURFN
+O4ROO
+_OPT
+INTVsARG
+RELO
+FILWRTTM
+STRTW
+TLMC
+INF0
+$ACT
+VRQSTCOe
+TRKcIDK
+MPM"
+$TMnX+OTLl
+{&TASK
+RTRE
+. O$OSTIME~=
+ROUT_N
+#COMM
+RESER
+PRS)
+_DUO#
+/0LO
+J85G;6G;7G;
+LC%53ALI
+SAVE
+PATH` %
+=?O>
+DEST_DIR
+NM_BAS
+YS_FL
+^hCFORM
+!TUG
+PCLOC<
+SPEEe
+THI_CKNESG
+rcFLO
+?2$WELD
+_TO\
+T_Sd
+CLST
+;x#AV*
+PTz
+#3PDbs
+PDFwss
+IN{yTy<p_TH
+3PROdssk
+O ^>
+`PXU
+%`ejFCTL_S
+WITC
+cP18?3UNCLMd
+=%PwSCH
+&WLD~
+sSDh
+HI@Q
+K_MMXu
+'%TC?PX_AF_
+A~k`
+IsN2
+OT[] log<E
+b_MOT
+/ /2/
+FH!OK
+Acceltim
+e tun
+/(?F
+:TU`,
+P113
+(dyn fri?ction)
+?@?R(y0_8n
+P47(iner'tia
+0_?q683(
+clos
+0hre
+3AaOsG
+C fc
+K9_Lo5
+1(sprin
+g consta
+o5wQ2(p
+@sure gaAi
+K2_L
+2 par
+FC2PARM
+0Auto Ze
+ro calib
+rate%
+?AUTOMAg
+Defle
+8-DFL_CTCAL
+Manual
+}f(gunke
+y)~(
+weldp~/
+ipwear m{ea
+ament
+IPWEA
+ke sched
+KRE_J
+x TS
+rev|
+Zane7l s
+N{SRCH]
+>'PANEL
+heck
+n(]P
+Reser
+ved1
+Xtra
+X!XTRA|
+$SG\
+$/6/
+!L%X)n
+>/}/
+?1?C?U?g?y?
+?U/_'
+O&O8OK/]/nO
+4_F_X_j_|_
+/AoSoHOZO\o
+ED54_
+55_56_OP
+150_W
+,2MB

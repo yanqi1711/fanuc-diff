@@ -1,3 +1,0 @@
-Security Log for YI96144 at 05-SEP-26 10:48:52
-MAIN Security Log Filter is empty.
-COMM Security Log Filter is empty.

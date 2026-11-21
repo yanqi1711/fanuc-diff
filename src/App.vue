@@ -12,6 +12,6 @@ import NavBar from './components/NavBar.vue'
     </RouterView>
   </main>
   <footer class="px-4 sm:px-8 pb-10 text-xs op-40 font-mono text-center">
-    FANUC R-2000iC · V9.40P · 12 台机器人 · 2026-09-05 → 2026-11-02
+    FANUC R-2000iC · V9.40P · 10 台机器人 · 2026-07-05 → 2026-11-21
   </footer>
 </template>

@@ -1,0 +1,90 @@
+/PROG  TIPDRESS_GUN
+/ATTR
+OWNER		= MNEDITOR;
+COMMENT		= "TipDress_Gun";
+PROG_SIZE	= 1105;
+CREATE		= DATE 26-03-14  TIME 20:22:18;
+MODIFIED	= DATE 26-11-20  TIME 12:58:30;
+FILE_NAME	= ;
+VERSION		= 0;
+LINE_COUNT	= 17;
+MEMORY_SIZE	= 1425;
+PROTECT		= READ_WRITE;
+TCD:  STACK_SIZE	= 0,
+      TASK_PRIORITY	= 50,
+      TIME_SLICE	= 0,
+      BUSY_LAMP_OFF	= 0,
+      ABORT_REQUEST	= 0,
+      PAUSE_REQUEST	= 0;
+DEFAULT_GROUP	= 1,1,*,*,*;
+CONTROL_CODE	= 00000000 00000000;
+LOCAL_REGISTERS	= 0,0,0;
+/APPL
+  SPOT : TRUE ; 
+  SPOT Welding Equipment Number : 1 ;
+/MN
+   1:  PAYLOAD[1:GUN] ;
+   2:  UTOOL_NUM=1 ;
+   3:  UFRAME_NUM=0 ;
+   4:  DO[201:OFF:Ç¹1ÐÞÄ¥ÖÐ]=ON ;
+   5:J PR[1:HOME] 100% FINE    ;
+   6:J P[6] 100% FINE    ;
+   7:J P[3] 100% CNT10    ;
+   8:  DO[257:OFF:µ¶Æ¬Ðý×ª]=PULSE,10.0sec ;
+   9:  //WAIT DI[257:OFF]=ON+    ;
+  10:  !ÐÞÄ¥Î» ;
+  11:L P[4] 2000mm/sec FINE
+    :  TIPDRESS[SD=10,P=10,t=6.0,TD=1,ED=10]    ;
+  12:J P[5] 100% CNT10    ;
+  13:  DO[257:OFF:µ¶Æ¬Ðý×ª]=OFF ;
+  14:J P[2] 100% CNT50    ;
+  15:J PR[1:HOME] 100% FINE    ;
+  16:  CALL WR_UPD01(1,0) ;
+  17:  CALL TD_DRESS_END    ;
+/POS
+P[2:""]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   682.565  mm,	Y =  1259.410  mm,	Z =   137.446  mm,
+	W =  -116.048 deg,	P =    69.855 deg,	R =    65.128 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   136.809  mm
+};
+P[3]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   687.281  mm,	Y =  1242.469  mm,	Z =  -153.226  mm,
+	W =   -98.019 deg,	P =    71.281 deg,	R =    82.045 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   136.809  mm
+};
+P[4]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   624.252  mm,	Y =  1240.939  mm,	Z =  -156.006  mm,
+	W =   -97.176 deg,	P =    73.439 deg,	R =    83.315 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=    51.019  mm
+};
+P[5]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   687.281  mm,	Y =  1242.469  mm,	Z =  -153.226  mm,
+	W =   -98.019 deg,	P =    71.281 deg,	R =    82.045 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   136.809  mm
+};
+P[6:""]{
+   GP1:
+	UF : 0, UT : 1,		CONFIG : 'N U T, 0, 0, 0',
+	X =   682.565  mm,	Y =  1259.410  mm,	Z =   137.446  mm,
+	W =  -116.048 deg,	P =    69.855 deg,	R =    65.128 deg
+   GP2:
+	UF : 0, UT : 1,	
+	J1=   136.809  mm
+};
+/END

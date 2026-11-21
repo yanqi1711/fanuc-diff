@@ -1,0 +1,109 @@
+Func       Date      Time    Tick       NavID              Text
+POWR  72 28-FEB-26 13:29:10  fe5d Power Cycle 
+KEY   72 28-FEB-26 13:29:32  1bc0 /wizard/guided/steps Initial Setup
+KEY   72 28-FEB-26 13:30:12  6afe /wizard/guided/steps Initial Setup
+EXIT  72 28-FEB-26 13:30:12  6aff 94 2 
+POWR  72 28-FEB-26 13:47:08  6234 Power Cycle 
+POWR  72 28-FEB-26 13:48:50  3b83 Power Cycle 
+KEY   72 28-FEB-26 13:48:56  446c /wizard/guided/steps Initial Setup
+KEY   72 28-FEB-26 13:50:32   1f6 /wizard/guided/steps Initial Setup
+EXIT  72 28-FEB-26 13:50:32   1f7 94 2 
+POWR  72 07-MAR-26 15:59:12  398d Power Cycle 
+POWR  72 07-MAR-26 16:33:50  39e6 仄舻缭礉 
+POWR  72 07-MAR-26 16:55:30  5a4d 仄舻缭礉 
+POWR  72 07-MAR-26 16:57:28  38a4 仄舻缭礉 
+KEY   72 07-MAR-26 16:57:38  4840 /wizard/guided/steps 初始设置指南
+EXIT  72 07-MAR-26 16:57:38  4842 378 17 
+POWR  72 07-MAR-26 16:58:24  39d5 仄舻缭礉 
+POWR  72 07-MAR-26 16:59:54  5a65 仄舻缭礉 
+POWR  72 07-MAR-26 17:01:06  3856 仄舻缭礉 
+KEY   72 07-MAR-26 17:01:12  40af /wizard/guided/steps 初始设置指南
+KEY   72 07-MAR-26 17:01:18  4a98 /wizard/guided/steps 初始设置指南
+KEY   72 07-MAR-26 17:01:18  4b7b /wizard/guided/steps 初始设置指南
+KEY   72 07-MAR-26 17:01:18  4cef /wizard/guided/steps 初始设置指南
+KEY   72 07-MAR-26 17:01:20  4df7 /wizard/guided/steps 初始设置指南
+KEY   72 07-MAR-26 17:01:20  4f23 /wizard/guided/steps 初始设置指南
+KEY   72 07-MAR-26 17:01:20  5037 /wizard/guided/steps 初始设置指南
+KEY   72 07-MAR-26 17:01:24  5768 /wizard/guided/steps 初始设置指南
+EXIT  72 07-MAR-26 17:01:24  576a 957 1 
+POWR  72 07-MAR-26 17:03:40  39b7 仄舻缭礉 
+POWR  72 07-MAR-26 17:08:54  393f 仄舻缭礉 
+POWR  72 08-MAR-26 20:22:16  3967 仄舻缭礉 
+POWR  72 09-MAR-26 20:12:38  39f9 仄舻缭礉 
+POWR  72 10-MAR-26 18:51:06  3a12 仄舻缭礉 
+KEY   72 10-MAR-26 18:51:08  3d55 /nav/core/tohome 主页
+KEY   72 10-MAR-26 22:48:04  b203 /nav/core/tohome 主页
+EXIT  72 10-MAR-26 22:48:04  b205 98 1 
+POWR  72 10-MAR-26 22:49:28  39a8 仄舻缭礉 
+POWR  72 11-MAR-26 00:10:48  3979 仄舻缭礉 
+KEY   72 11-MAR-26 00:10:50  3ccd /nav/core/tohome 主页
+KEY   72 11-MAR-26 00:10:52  406d /nav/core/tohome 主页
+EXIT  72 11-MAR-26 00:10:52  406f 955 1 
+POWR  72 11-MAR-26 00:27:24  396a 仄舻缭礉 
+POWR  72 11-MAR-26 00:43:28  3979 仄舻缭礉 
+KEY   72 11-MAR-26 00:43:30  3cd8 /nav/core/tohome 主页
+KEY   72 11-MAR-26 01:01:12  543d /nav/core/tohome 主页
+EXIT  72 11-MAR-26 01:01:12  543e 74 1 
+POWR  72 11-MAR-26 15:13:54  396b 仄舻缭礉 
+POWR  72 11-MAR-26 15:29:34  3974 仄舻缭礉 
+KEY   72 11-MAR-26 15:29:36  3cd4 /nav/core/tohome 主页
+KEY   72 11-MAR-26 15:31:18   36a /nav/core/tohome 主页
+EXIT  72 11-MAR-26 15:31:18   36b 98 1 
+POWR  72 11-MAR-26 15:38:24  398d 仄舻缭礉 
+POWR  72 11-MAR-26 16:17:04  396e 仄舻缭礉 
+POWR  72 11-MAR-26 16:21:24  3978 仄舻缭礉 
+POWR  72 11-MAR-26 16:25:46  3984 仄舻缭礉 
+KEY   72 11-MAR-26 16:25:48  3ce7 /nav/core/tohome 主页
+KEY   72 11-MAR-26 16:25:56  4af3 /nav/core/tohome 主页
+EXIT  72 11-MAR-26 16:25:56  4af4 955 1 
+POWR  72 11-MAR-26 16:29:46  397a 仄舻缭礉 
+POWR  72 11-MAR-26 16:36:34  3983 仄舻缭礉 
+POWR  72 11-MAR-26 16:39:40  3972 仄舻缭礉 
+POWR  72 11-MAR-26 16:40:46  3982 仄舻缭礉 
+POWR  72 11-MAR-26 16:45:04  3974 仄舻缭礉 
+POWR  72 11-MAR-26 16:49:50  3991 仄舻缭礉 
+POWR  72 11-MAR-26 16:59:18  399b 仄舻缭礉 
+KEY   72 11-MAR-26 16:59:22  3cfc /nav/core/tohome 主页
+KEY   72 11-MAR-26 16:59:42  6565 /nav/core/tohome 主页
+EXIT  72 11-MAR-26 16:59:42  6566 98 1 
+POWR  72 11-MAR-26 18:10:00  3967 仄舻缭礉 
+POWR  72 11-MAR-26 18:19:40  3952 仄舻缭礉 
+KEY   72 11-MAR-26 18:19:44  3cb6 /nav/core/tohome 主页
+KEY   72 11-MAR-26 18:19:46  42ff /nav/core/tohome 主页
+EXIT  72 11-MAR-26 18:19:46  4300 98 1 
+POWR  72 11-MAR-26 18:38:42  3983 仄舻缭礉 
+KEY   72 11-MAR-26 18:38:46  3e69 /nav/core/tohome 主页
+KEY   72 11-MAR-26 18:38:50  4675 /nav/core/tohome 主页
+EXIT  72 11-MAR-26 18:38:50  4676 1859 2 
+POWR  72 11-MAR-26 21:08:10  39a6 仄舻缭礉 
+KEY   72 11-MAR-26 21:08:14  3cfa /nav/core/tohome 主页
+KEY   72 11-MAR-26 21:08:16  42a8 /nav/core/tohome 主页
+EXIT  72 11-MAR-26 21:08:16  42aa 1859 2 
+POWR  72 13-MAR-26 12:35:38  5b6e 仄舻缭礉 
+POWR  72 13-MAR-26 12:37:50  6dd4 仄舻缭礉 
+KEY   72 13-MAR-26 12:37:54  75bf /wizard/guided/steps 初始设置指南
+KEY   72 13-MAR-26 12:38:00  7db2 /wizard/guided/steps 初始设置指南
+EXIT  72 13-MAR-26 12:38:00  7db3 1631 3 
+KEY   72 13-MAR-26 12:38:00  7eb9 /nav/core/tohome 主页
+KEY   72 13-MAR-26 12:38:00  804d /nav/core/tohome 主页
+KEY   72 13-MAR-26 12:38:06  878d /nav/core/tohome 主页
+EXIT  72 13-MAR-26 12:38:06  878e 71 1 
+POWR  72 13-MAR-26 14:22:52  3a21 仄舻缭礉 
+POWR  72 14-MAR-26 11:13:48  4878 仄舻缭礉 
+KEY   72 14-MAR-26 11:13:56  4bc8 /nav/core/tohome 主页
+KEY   72 14-MAR-26 17:01:26  5bf0 /nav/core/tohome 主页
+EXIT  72 14-MAR-26 17:01:26  5bf1 955 1 
+POWR  72 14-MAR-26 20:06:54  3a6f 仄舻缭礉 
+POWR  72 20-MAR-26 14:18:44  537d 仄舻缭礉 
+POWR  72 20-MAR-26 14:20:18  39fc 仄舻缭礉 
+POWR  72 21-MAR-26 14:39:14  39ee 仄舻缭礉 
+POWR  72 31-MAR-26 15:03:20  5b08 仄舻缭礉 
+POWR  72 31-MAR-26 15:04:52  43e3 仄舻缭礉 
+KEY   72 31-MAR-26 15:04:54  4bb7 /wizard/guided/steps 初始设置指南
+KEY   72 31-MAR-26 15:05:00  52d5 /wizard/guided/steps 初始设置指南
+EXIT  72 31-MAR-26 15:05:00  52d6 64 1 
+POWR  72 28-APR-26 01:48:28  53c8 仄舻缭礉 
+POWR  72 30-MAY-26 21:58:50  53a2 仄舻缭礉 
+POWR  72 04-JUN-26 14:11:20  3a6a 仄舻缭礉 
+KEY   72 04-JUN-26 14:11:22  3b98 /nav/core/tohome 主页
+EXIT  72 04-JUN-26 14:11:22  3b99 74 1 

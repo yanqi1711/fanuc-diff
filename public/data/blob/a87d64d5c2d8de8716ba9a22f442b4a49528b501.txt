@@ -1,5 +1,0 @@
-F Number: YI92821
-VERSION : SpotTool+
-$VERSION: V9.40501      9/12/2025
-DATE:     05-SEP-26 10:41
-Columns: Date, (U)pload/(D)ownload, File, Status, IPaddress
